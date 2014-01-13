@@ -1,10 +1,10 @@
-class Puck {
+class puck {
   
   PVector loc, vel;
   float d;
   color c;
   
-  Puck (float x, float y){
+  puck (float x, float y){
     loc = new PVector(x, y);
     vel = new PVector(random(-1, 1), random(-2, 0));
     d = 20;
@@ -17,6 +17,7 @@ class Puck {
   }
   
   void bounce(){
+    //makes puck bounce
     loc.add(vel);
     if(loc.x + d/2 > width){
       vel.x = -vel.x;
@@ -33,6 +34,8 @@ class Puck {
   }
   
   void reset(){
+    /*Resets puck to the middle of table if it goes through one
+    the holes*/
     if(loc.x + d/2 < 0 && loc.y > height/1.5 && loc.y < height/4){
       loc.x = width/2;
       loc.y = height/2;
