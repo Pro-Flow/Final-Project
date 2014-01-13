@@ -36,11 +36,13 @@ class puck {
   void reset(){
     /*Resets puck to the middle of table if it goes through one
     the holes*/
-    if(loc.x + d/2 < 0 && loc.y > height/1.5 && loc.y < height/4){
+    //Left Hole
+    if(loc.x + d/2 < 0 && loc.y > 185 && loc.y < 315){
       loc.x = width/2;
       loc.y = height/2;
     }
-    if(loc.x - d/2 > width && loc.y > height/1.5 && loc.y <height/4){
+    //Right Hole
+    if(loc.x - d/2 > width && loc.y > 185 && loc.y < 315){
       loc.x = width/2;
       loc.y = height/2;
     }
