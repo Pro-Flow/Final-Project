@@ -8,7 +8,7 @@ class puck {
     loc = new PVector(x, y);
     vel = new PVector(random(-1, 1), random(-2, 0));
     d = 20;
-    c = fill(random(360), 100, 100);
+    c = color(random(360), 100, 100);
   }
   
   void display(){
