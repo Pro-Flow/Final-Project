@@ -7,7 +7,7 @@ int d = 2;
 
 void setup() {
   size(800, 500);
-  rectMode(CORNER);
+  
 }
 void draw() {
   background(0);
@@ -48,6 +48,10 @@ void draw() {
   stroke(0, 0, 255);//blue rectangle
   rect(410, 475, horiwidth2, horiheight, 20);//h
   rect(775, 320, vertwidth, vertheight, 20);//v
+ 
+  stroke(190);
+  line(405,10,405,490);
+
 
 
 
