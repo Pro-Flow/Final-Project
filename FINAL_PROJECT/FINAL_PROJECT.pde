@@ -9,7 +9,7 @@ int horiheight=15;
 int d = 2;
 PImage world;
 
-void setup (){
+void setup () {
   size(800, 500);
   background (0);
   run = false;
@@ -18,9 +18,19 @@ void setup (){
   world=loadImage("bg.jpg");
 }
 
-void draw(){
-  background(0);
+void draw() {
+   if (!run) {
+    background(world.width, world.height);
+    rect(400, 200, 100, 100); // start button
+    text("Start", 400, 300); 
+    rect(400, 350, 100, 100); //instructions button
+    text("Instructions", 400, 360);
 
+
+    //insert start screen graphics here
+  }
+  if(run){
+  background(0);
   stroke(155, 144, 144);//2 goals
   fill(0);
   ellipse(0, 250, 170, 140);
@@ -57,55 +67,48 @@ void draw(){
   stroke(0, 0, 255);//blue rectangle
   rect(410, 475, horiwidth2, horiheight, 20);//h
   rect(775, 320, vertwidth, vertheight, 20);//v
- 
+
   stroke(190);
-  line(405,10,405,490);
- 
- 
-  if(!run){
-    background(world.width, world.height);
-    rect(400,200,100,100); // start button
-    text("Start",400,300); 
-    rect(400,350,100,100); //instructions button
-    text("Instructions",400,360);
-    
-    
-    //insert start screen graphics here
+  line(405, 10, 405, 490);
   }
-  if(!run && !gameOver){
+
+
+ 
+  if (!run && !gameOver) {
     instructions = true;
   }
-  if(instructions == true){
+  if (instructions == true) {
     //display instruction screen here
   }
-  if(run){
-    mallet.display();
-    puck.display();
-    puck.bounce();
-    //insert code for game here
-  }
-  if(score >= 10){
+  if (score >= 10) {
     gameOver = true;
   }
-  if(gameOver == true){
+  if (gameOver == true) {
     //insert end screen  here
   }
 }
 
-void mousePressed(){
-  if(mouseX>400 && mouseX<500 && mouseY>200 && mouseY<300) {//click to start game
-  run = true;
-}
-  if(mouseX<400 && mouseX>500 && mouseY<200 && mouseY>300) {
-   run=false;
+void mousePressed() {
+  if (mouseX>400 && mouseX<500 && mouseY>200 && mouseY<300) {//click to start game
+    run = true;
   }
+  if (mouseX<400 && mouseX>500 && mouseY<200 && mouseY>300) {
+    run=false;
+  }
+  if(mouseX>400 && mouseX<500 && mouseY>350 && mouseY<450) {
+    instructions = true;
+  }
+  if(mouseX<400 && mouseX>500 && mouseY<350 && mouseY>450) {
+    instructions = false;
+  }
+  
 
-void keyPressed(){
-  //I think this will pause game, now sure yet lol
-  //Press p to pause
-  if(key == 'p'){
-  gameOver = !gameOver;
-}
-}
-    
+
+  void keyPressed() {
+    //I think this will pause game, now sure yet lol
+    //Press p to pause
+    if (key == 'p') {
+      gameOver = !gameOver;
+    }
+  }
 
