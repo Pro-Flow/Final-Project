@@ -1,6 +1,8 @@
 boolean run;
 boolean gameOver;
 boolean instructions;
+int score;
+
 
 void setup (){
   size(800, 500);
@@ -8,6 +10,7 @@ void setup (){
   run = false;
   gameOver = false;
   instructions = false;
+  score = 0;
 }
 
 void draw(){
@@ -19,6 +22,7 @@ void draw(){
   }
   if(instructions == true){
     //display instruction screen here
+    
   }
   if(run){
     //insert code for game here
