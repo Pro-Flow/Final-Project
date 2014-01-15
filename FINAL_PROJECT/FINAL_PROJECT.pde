@@ -22,6 +22,10 @@ void setup (){
 }
 
 void draw(){
+    if(!run){
+    //insert start screen graphics here
+  }
+  if(run){
   background(0);
 
   stroke(155, 144, 144);//2 goals
@@ -40,7 +44,6 @@ void draw(){
       ellipse(x, y, d, d);
     }
   }
-
 
   fill(255);
   strokeWeight(4);
@@ -63,20 +66,14 @@ void draw(){
  
   stroke(190);
   line(405,10,405,490);
-  
-  
-  if(!run){
-    //insert start screen graphics here
   }
+
   if(!run && !gameOver){
     instructions = true;
   }
   if(instructions == true){
     //display instruction screen here
     
-  }
-  if(run){
-    //insert code for game here
   }
   if(score >= 10){
     gameOver = true;
