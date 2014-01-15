@@ -40,18 +40,19 @@ class puck {
     if(loc.x + d/2 < 0 && loc.y > 185 && loc.y < 315){
       loc.x = width/2;
       loc.y = height/2;
-      score++;
+      score1++;
     }
     //Right Hole
     if(loc.x - d/2 > width && loc.y > 185 && loc.y < 315){
       loc.x = width/2;
       loc.y = height/2;
-      score++;
+      score2++;
     }
     
     void touch(bonus b){
       if(loc.dist(b.loc) <20){
-        b.reset();
+        score1 += 50;
+        score2 += 50;
       }
     }
         

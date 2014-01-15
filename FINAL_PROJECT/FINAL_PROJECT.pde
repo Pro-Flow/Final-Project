@@ -1,7 +1,8 @@
 boolean run;
 boolean gameOver;
 boolean instructions;
-int score;
+int score1;
+int score2;
 int vertwidth=15;
 int vertheight=150;
 int horiwidth1=390;
@@ -16,7 +17,8 @@ void setup (){
   run = false;
   gameOver = false;
   instructions = false;
-  score = 0;
+  score1 = 0;
+  score2 = 0;
 }
 
 void draw(){
@@ -61,11 +63,6 @@ void draw(){
  
   stroke(190);
   line(405,10,405,490);
-
-
-  
-  
-  
   
   
   if(!run){

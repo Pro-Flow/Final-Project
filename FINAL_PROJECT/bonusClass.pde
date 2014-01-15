@@ -14,3 +14,5 @@ class bonus {
       ellipse(loc.x, loc.y, d, d);
     }
   }
+ 
+    
