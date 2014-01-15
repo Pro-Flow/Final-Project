@@ -1,16 +1,24 @@
 boolean run;
 boolean gameOver;
+boolean instructions;
 
 void setup (){
   size(800, 500);
   background (0);
   run = false;
   gameOver = false;
+  instructions = false;
 }
 
 void draw(){
   if(!run){
     //insert start screen graphics here
+  }
+  if(!run && !gameOver){
+    instructions = true;
+  }
+  if(instructions == true){
+    //display instruction screen here
   }
   if(run){
     //insert code for game here

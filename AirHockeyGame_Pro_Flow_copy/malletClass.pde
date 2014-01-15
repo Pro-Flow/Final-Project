@@ -92,5 +92,12 @@ class mallet {
         }
       }
     }
+    
+    void checkPuck(Puck p){
+      if(loc.dist(p.loc) < d/2 + p.d/2){
+        vel.mult(-1);
+      }
+    }
+      
    
       
