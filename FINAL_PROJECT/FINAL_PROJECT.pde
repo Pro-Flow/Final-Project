@@ -1,6 +1,8 @@
 boolean run;
 boolean gameOver;
 boolean instructions;
+int score1;
+int score2;
 int vertwidth=15;
 int vertheight=150;
 int horiwidth1=390;
@@ -9,24 +11,25 @@ int horiheight=15;
 int d = 2;
 PImage world;
 
-void setup () {
+void setup (){
   size(800, 500);
   background (0);
   run = false;
   gameOver = false;
   instructions = false;
+  score1 = 0;
+  score2 = 0;
   world=loadImage("bg.jpg");
 }
 
-void draw() {
-   if (!run) {
-    background(world.width, world.height);
-    rect(400, 200, 100, 100); // start button
-    text("Start", 400, 300); 
-    rect(400, 350, 100, 100); //instructions button
-    text("Instructions", 400, 360);
-
-
+void draw(){
+    if(!run){
+     background(world.width, world.height);
+    rect(400,200,100,100); // start button
+    text("Start",400,300); 
+    rect(400,350,100,100); //instructions button
+    text("Instructions",400,360);
+  }
     //insert start screen graphics here
   }
   if(run){
@@ -48,7 +51,6 @@ void draw() {
     }
   }
 
-
   fill(255);
   strokeWeight(4);
 
@@ -69,24 +71,29 @@ void draw() {
   rect(775, 320, vertwidth, vertheight, 20);//v
 
   stroke(190);
+
   line(405, 10, 405, 490);
   }
-
-
  
   if (!run && !gameOver) {
+
+  line(405,10,405,490);
+
+  if(!run && !gameOver){
     instructions = true;
   }
   if (instructions == true) {
     //display instruction screen here
   }
-  if (score >= 10) {
+
+  if (score >= 10){
     gameOver = true;
   }
   if (gameOver == true) {
     //insert end screen  here
   }
 }
+
 
 void mousePressed() {
   if (mouseX>400 && mouseX<500 && mouseY>200 && mouseY<300) {//click to start game
@@ -101,8 +108,8 @@ void mousePressed() {
   if(mouseX<400 && mouseX>500 && mouseY<350 && mouseY>450) {
     instructions = false;
   }
-  
-
+}
+ 
 
   void keyPressed() {
     //I think this will pause game, now sure yet lol
