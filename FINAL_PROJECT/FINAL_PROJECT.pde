@@ -9,6 +9,7 @@ int horiwidth1=390;
 int horiwidth2=380;
 int horiheight=15;
 int d = 2;
+PImage world;
 
 
 void setup (){
@@ -17,8 +18,12 @@ void setup (){
   run = false;
   gameOver = false;
   instructions = false;
+<<<<<<< HEAD
   score1 = 0;
   score2 = 0;
+=======
+  world=loadImage("bg.jpg");
+>>>>>>> origin/GRAPHICS
 }
 
 void draw(){
@@ -66,6 +71,20 @@ void draw(){
  
   stroke(190);
   line(405,10,405,490);
+<<<<<<< HEAD
+=======
+ 
+ 
+  if(!run){
+    background(world.width, world.height);
+    rect(400,200,100,100); // start button
+    text("Start",400,300); 
+    rect(400,350,100,100); //instructions button
+    text("Instructions",400,360);
+    
+    
+    //insert start screen graphics here
+>>>>>>> origin/GRAPHICS
   }
 
   if(!run && !gameOver){
@@ -73,7 +92,16 @@ void draw(){
   }
   if(instructions == true){
     //display instruction screen here
+<<<<<<< HEAD
     
+=======
+  }
+  if(run){
+    mallet.display();
+    puck.display();
+    puck.bounce();
+    //insert code for game here
+>>>>>>> origin/GRAPHICS
   }
   if(score >= 10){
     gameOver = true;
@@ -84,9 +112,12 @@ void draw(){
 }
 
 void mousePressed(){
-  //click to start game
-  run = !run;
+  if(mouseX>400 && mouseX<500 && mouseY>200 && mouseY<300) {//click to start game
+  run = true;
 }
+  if(mouseX<400 && mouseX>500 && mouseY<200 && mouseY>300) {
+   run=false;
+  }
 
 void keyPressed(){
   //I think this will pause game, now sure yet lol
