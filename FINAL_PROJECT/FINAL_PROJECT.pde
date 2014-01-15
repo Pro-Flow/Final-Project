@@ -88,7 +88,8 @@ void draw(){
 }
 
 void mousePressed(){
-  if(mouseX>400 && mouseX<500 && mouseY>200 && mouseY<300) {//click to start game
+  if(mouseX>400 && mouseX<500 && mouseY>200 && mouseY<300) {
+    //click to start game
   run = true;
 }
   if(mouseX<400 && mouseX>500 && mouseY<200 && mouseY>300) {
