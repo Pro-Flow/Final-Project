@@ -18,17 +18,18 @@ void setup (){
   run = false;
   gameOver = false;
   instructions = false;
-<<<<<<< HEAD
   score1 = 0;
   score2 = 0;
-=======
   world=loadImage("bg.jpg");
->>>>>>> origin/GRAPHICS
 }
 
 void draw(){
     if(!run){
-    //insert start screen graphics here
+     background(world.width, world.height);
+    rect(400,200,100,100); // start button
+    text("Start",400,300); 
+    rect(400,350,100,100); //instructions button
+    text("Instructions",400,360);
   }
   if(run){
   background(0);
@@ -71,37 +72,12 @@ void draw(){
  
   stroke(190);
   line(405,10,405,490);
-<<<<<<< HEAD
-=======
- 
- 
-  if(!run){
-    background(world.width, world.height);
-    rect(400,200,100,100); // start button
-    text("Start",400,300); 
-    rect(400,350,100,100); //instructions button
-    text("Instructions",400,360);
-    
-    
-    //insert start screen graphics here
->>>>>>> origin/GRAPHICS
-  }
 
   if(!run && !gameOver){
     instructions = true;
   }
   if(instructions == true){
     //display instruction screen here
-<<<<<<< HEAD
-    
-=======
-  }
-  if(run){
-    mallet.display();
-    puck.display();
-    puck.bounce();
-    //insert code for game here
->>>>>>> origin/GRAPHICS
   }
   if(score >= 10){
     gameOver = true;
