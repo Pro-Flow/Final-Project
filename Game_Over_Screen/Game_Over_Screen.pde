@@ -44,3 +44,8 @@ void draw() {
   //    if(mouseX > x && mouseX < x+s && mouseY > y
 }
 
+//void mousePressed() {
+//  if (gameOver = true) {
+//    exit();
+//  }
+//}
