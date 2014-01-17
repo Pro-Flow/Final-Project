@@ -34,16 +34,12 @@ void draw(){
   }
   if(run){
   background(0);
-
   stroke(155, 144, 144);//2 goals
   fill(0);
   ellipse(0, 250, 170, 140);
   ellipse(800, 250, 170, 140);
-
   strokeWeight(8);//center circle
   ellipse(400, 250, 200, 200);
-
-
   noStroke();//little air holes
   fill(190);
   for (int x=d/2; x<width; x+=10) {
@@ -51,28 +47,23 @@ void draw(){
       ellipse(x, y, d, d);
     }
   }
-
   fill(255);
   strokeWeight(4);
-
   stroke(238, 242, 51); //yellow rectangle
   rect(10, 10, horiwidth1, horiheight, 20);//h
   rect(10, 30, vertwidth, vertheight, 20);//v
-
   stroke(255, 0, 0);//red rectangle
   rect(10, 475, horiwidth1, horiheight, 20);//h
   rect(10, 320, vertwidth, vertheight, 20);//v
-
   stroke(0, 255, 0);//green rectangle
   rect(410, 10, horiwidth2, horiheight, 20);//h
   rect(775, 30, vertwidth, vertheight, 20);//v
-
   stroke(0, 0, 255);//blue rectangle
   rect(410, 475, horiwidth2, horiheight, 20);//h
   rect(775, 320, vertwidth, vertheight, 20);//v
- 
   stroke(190);
   line(405,10,405,490);
+  
 
   if(!run && !gameOver){
     instructions = true;
@@ -80,12 +71,13 @@ void draw(){
   if(instructions == true){
     //display instruction screen here
   }
-  if(score >= 10){
+  if(score1 || score2 >= 10){
     gameOver = true;
   }
   if(gameOver == true){
     //insert end screen  here
   }
+}
 }
 
 void mousePressed(){
@@ -96,6 +88,7 @@ void mousePressed(){
   if(mouseX<400 && mouseX>500 && mouseY<200 && mouseY>300) {
    run=false;
   }
+}
 
 void keyPressed(){
   //I think this will pause game, now sure yet lol

@@ -48,12 +48,8 @@ class puck {
       loc.y = height/2;
       score2++;
     }
+  }
     
-    void touch(bonus b){
-      if(loc.dist(b.loc) <20){
-        score1 += 50;
-        score2 += 50;
-      }
-    }
+ 
         
     
