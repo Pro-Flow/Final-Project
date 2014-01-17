@@ -23,13 +23,14 @@ void setup () {
 }
 
 void draw() {
-  if (run= false) {
+  if (!run) {
     background(world.width, world.height);
     rect(400, 200, 100, 100); // start button
     text("Start", 400, 300); 
     rect(400, 350, 100, 100); //instructions button
     text("Instructions", 400, 360);
   }
+<<<<<<< HEAD
 <<<<<<< HEAD
   //insert start screen graphics here
 
@@ -71,6 +72,8 @@ void draw() {
     rect(410, 475, horiwidth2, horiheight, 20);//h
     rect(775, 320, vertwidth, vertheight, 20);//v
 =======
+=======
+>>>>>>> origin/Skeleton
   if(run){
   background(0);
   stroke(155, 144, 144);//2 goals
@@ -102,6 +105,7 @@ void draw() {
   rect(775, 320, vertwidth, vertheight, 20);//v
   stroke(190);
   line(405,10,405,490);
+<<<<<<< HEAD
   
 >>>>>>> origin/Skeleton
 
@@ -124,6 +128,8 @@ void draw() {
     gameOver = true;
 >>>>>>> origin/Skeleton
   }
+=======
+>>>>>>> origin/Skeleton
   if (instructions == true) {
     text("here are the instructions");
     if (key == 'b') {
@@ -131,7 +137,7 @@ void draw() {
       //display instruction screen here
     }
 
-    if (score >= 10) {
+    if (score1 || score 2 >= 10) {
       gameOver = true;
     }
     if (gameOver == true) {

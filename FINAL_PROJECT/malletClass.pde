@@ -47,6 +47,11 @@ class mallet {
       y++;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    }     
+=======
+>>>>>>> origin/Skeleton
     }
       
     void wasd(){
@@ -55,8 +60,12 @@ class mallet {
       }
     }
       
+<<<<<<< HEAD
 =======
     }     
+>>>>>>> origin/Skeleton
+=======
+>>>>>>> origin/GRAPHICS
 >>>>>>> origin/Skeleton
     
     void arrows(){
