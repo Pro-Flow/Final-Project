@@ -11,8 +11,7 @@ int horiheight=15;
 int d = 2;
 PImage world;
 
-
-void setup (){
+void setup () {
   size(800, 500);
   background (0);
   run = false;
@@ -23,13 +22,13 @@ void setup (){
   world=loadImage("bg.jpg");
 }
 
-void draw(){
-    if(!run){
-     background(world.width, world.height);
-    rect(400,200,100,100); // start button
-    text("Start",400,300); 
-    rect(400,350,100,100); //instructions button
-    text("Instructions",400,360);
+void draw() {
+  if (!run) {
+    background(world.width, world.height);
+    rect(400, 200, 100, 100); // start button
+    text("Start", 400, 300); 
+    rect(400, 350, 100, 100); //instructions button
+    text("Instructions", 400, 360);
   }
   if(run){
   background(0);
@@ -62,39 +61,50 @@ void draw(){
   rect(775, 320, vertwidth, vertheight, 20);//v
   stroke(190);
   line(405,10,405,490);
-  
+  if (instructions == true) {
+    text("here are the instructions");
+    if (key == 'b') {
+      run = false;
+      //display instruction screen here
+    }
 
-  if(!run && !gameOver){
-    instructions = true;
-  }
-  if(instructions == true){
-    //display instruction screen here
-  }
-  if(score1 || score2 >= 10){
-    gameOver = true;
-  }
-  if(gameOver == true){
+    if (score1 || score 2 >= 10) {
+      gameOver = true;
+    }
+    if (gameOver == true) {
+      run = false;
+
+      if (key == 'r') {
+        run = true;
+      }
+    }
     //insert end screen  here
   }
 }
 }
 
-void mousePressed(){
-  if(mouseX>400 && mouseX<500 && mouseY>200 && mouseY<300) {
-    //click to start game
-  run = true;
-}
-  if(mouseX<400 && mouseX>500 && mouseY<200 && mouseY>300) {
-   run=false;
+
+void mousePressed() {
+  if (mouseX>400 && mouseX<500 && mouseY>200 && mouseY<300) {//click to start game
+    run = true;
+  }
+  if (mouseX<400 && mouseX>500 && mouseY<200 && mouseY>300) {
+    run=false;
+  }
+  if (mouseX>400 && mouseX<500 && mouseY>350 && mouseY<450) {
+    instructions = true;
+  }
+  if (mouseX<400 && mouseX>500 && mouseY<350 && mouseY>450) {
+    instructions = false;
   }
 }
 
-void keyPressed(){
+
+void keyPressed() {
   //I think this will pause game, now sure yet lol
   //Press p to pause
-  if(key == 'p'){
-  gameOver = !gameOver;
+  if (key == 'p') {
+    gameOver = !gameOver;
+  }
 }
-}
-    
 

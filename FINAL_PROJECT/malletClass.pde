@@ -46,7 +46,18 @@ class mallet {
       x++;
       y++;
     }
+<<<<<<< HEAD
     }     
+=======
+    }
+      
+    void wasd(){
+      void keyPressed(){
+        
+      }
+    }
+      
+>>>>>>> origin/GRAPHICS
     
     void arrows(){
       //WASD & Arrow Key movement
