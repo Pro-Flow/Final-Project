@@ -4,7 +4,7 @@ class puck {
   float d;
   color c;
 
-  puck () {
+  puck (){
     loc = new PVector(width/2, height/2);
     vel = new PVector(random(-1, 1), random(-2, 0));
     d = 20;
@@ -50,7 +50,7 @@ class puck {
     }
   }
 }
-}
+
 
 
 

@@ -91,12 +91,22 @@ class mallet {
     arrows();
   }
 
-/*void checkPuck(puck p1) {
- if (loc.dist(p1.loc) < d/2 + p1.d/2) {
- vel.mult(-1);
- }
- }
- }
- */
 
+  void checkPuck(puck p1) {
+    if (loc.dist(p1.loc) < d/2 + p1.d/2) {
+      if(p1.loc.x < mallet.loc.x){
+        p1.vel.x = -1;
+      }
+      if(p1.loc.x > mallet.loc.x){
+        p1.vel.x = 1;
+    }
+    if(p1.loc.y < mallet.loc.y){
+      p1.vel.y = -1;
+    }
+    if(p1.loc.y > mallet.loc.y){
+      p1.vel.y = 1;
+  }
+}
+  }
+}
 

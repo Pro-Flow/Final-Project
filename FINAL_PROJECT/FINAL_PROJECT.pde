@@ -74,10 +74,10 @@ void draw() {
     p1.reset();
     m1.display();
     m1.arrows();
-    //m1.checkPuck(p1);
+    m1.checkPuck(p1);
     m2.display();
     m2.wasd();
-    //m2.checkPuck(p1);
+    m2.checkPuck(p1);
     if (instructions == true) {
       text("Here are the instructions:", width/4, height/4);
       if (key == 'b') {
