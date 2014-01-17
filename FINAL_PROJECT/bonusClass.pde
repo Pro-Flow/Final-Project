@@ -16,11 +16,17 @@ class bonus {
       ellipse(loc.x, loc.y, d, d);
     }
   }
+  
+  void reset(){
+    loc.x = 1000;
+    loc.y = 1000;
+  }
+  
      void touch(puck p){
       if(loc.dist(p.loc) <20){
         score1 += 3;
         score2 += 3;
-        loc.y = 0;
+        bonus.reset();
       }
     }
 }

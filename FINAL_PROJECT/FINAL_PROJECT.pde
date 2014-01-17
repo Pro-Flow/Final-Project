@@ -67,7 +67,6 @@ void draw() {
       run = false;
       //display instruction screen here
     }
-
     if (score1 || score 2 >= 10) {
       gameOver = true;
     }
