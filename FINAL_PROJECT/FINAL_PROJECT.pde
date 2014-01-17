@@ -2,6 +2,7 @@ float x=0;
 float y=0;
 puck p1;
 mallet m1;
+mallet m2;
 boolean run;
 boolean gameOver;
 boolean instructions;
@@ -18,6 +19,7 @@ PImage world;
 void setup () {
   p1 = new puck();
   m1 = new mallet();
+  m2 = new mallet();
   size(800, 500);
   background (0);
   run = false;
@@ -71,8 +73,11 @@ void draw() {
     p1.bounce();
     p1.reset();
     m1.display();
-    //m1.move();
-    m1.checkPuck(p1);
+    m1.arrows();
+    //m1.checkPuck(p1);
+    m2.display();
+    m2.wasd();
+    //m2.checkPuck(p1);
     if (instructions == true) {
       text("Here are the instructions:", width/4, height/4);
       if (key == 'b') {

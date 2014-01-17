@@ -19,32 +19,32 @@ class mallet {
   void keyPressed() {
     //wasd
     if (key == 'w') {
-      y--;
+      loc.y--;
     }
     if (key == 'a') {
-      x--;
+      loc.x--;
     }
     if (key == 's') {
-      y++;
+      loc.y++;
     }
     if (key =='d') {
-      x++;
+      loc.x++;
     }
     if (key == 'w' && key == 'a') {
-      x--;
-      y--;
+      loc.x--;
+      loc.y--;
     }
     if (key == 'w' && key == 'd') {
-      x++;
-      y--;
+      loc.x++;
+      loc.y--;
     }
     if (key == 's' && key == 'a') {
-      x--;
-      y++;
+      loc.x--;
+      loc.y++;
     }
     if (key == 's' && key == 'd') {
-      x++;
-      y++;
+      loc.x++;
+      loc.y++;
     }
   }     
 
@@ -52,49 +52,51 @@ class mallet {
     //WASD & Arrow Key movement
     if (keyPressed && key == CODED) {
       if (keyCode == LEFT) {
-        x--;
+        loc.x--;
       }
       if (keyCode == UP) {
-        y--;
+        loc.y--;
       }
       if (keyCode == RIGHT) {
-        x++;
+        loc.x++;
       }
       if (keyCode == DOWN) {
-        y++;
+        loc.y++;
       }
       if (keyCode == LEFT && keyCode == UP) {
-        x--;
-        y--;
+        loc.x--;
+        loc.y--;
       }
       if (keyCode == RIGHT && keyCode == UP) {
-        x++;
-        y--;
+        loc.x++;
+        loc.y--;
       }
       if (keyCode == DOWN && keyCode == LEFT) {
-        x--;
-        y++;
+        loc.x--;
+        loc.y++;
       }
       if (keyCode == DOWN && keyCode == RIGHT) {
-        x++;
-        y++;
+        loc.x++;
+        loc.y++;
       }
     }
   }
 
-  /*void move(){
-   void keyPressed(){
-   void arrows(){
-   }
-   }
-   }
-   */
-  void checkPuck(puck p1) {
-    if (loc.dist(p1.loc) < d/2 + p1.d/2) {
-      vel.mult(-1);
-    }
+  void wasd() {
+    keyPressed();
   }
-}
 
+  void move() {
+    keyPressed();
+    arrows();
+  }
+
+/*void checkPuck(puck p1) {
+ if (loc.dist(p1.loc) < d/2 + p1.d/2) {
+ vel.mult(-1);
+ }
+ }
+ }
+ */
 
 

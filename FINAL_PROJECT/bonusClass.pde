@@ -10,7 +10,7 @@ class bonus {
     c = color(random(360), 100, 100);
   }
 
-  void display() {
+  void display(){
     if (score1 >= 5 || score2 >= 5) {
       fill(c);
       ellipse(loc.x, loc.y, d, d);
