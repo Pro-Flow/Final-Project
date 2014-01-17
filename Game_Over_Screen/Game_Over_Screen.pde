@@ -1,8 +1,9 @@
-int x, y, w, h;
+int w, h;
 boolean gameOver = false;
 
 void setup() {
-
+  w = 100;
+  h = 100;
 }
 
 void draw() {
@@ -22,6 +23,6 @@ void draw() {
   }
   //restart button
   fill(0, 0, 255);
-  rect(400, 300, h);
+  rect(400, 425, 100, 100);
   text
 }
