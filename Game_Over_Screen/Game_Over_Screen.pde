@@ -2,21 +2,17 @@ int x, y, w, h;
 boolean gameOver = false;
 
 void setup() {
-  x = 100;
-  y = 210;
-  w = 300;
-  h = 100;
+
 }
 
 void draw() {
+  //game over button
+  rectMode(CENTER);
   fill(0, 0, 255); 
-  rect(x, y, w, h); 
+  rect(400, 300, 100, 100); 
   fill(255); 
   textSize(50);
   text("GAME OVER", width/2, height/4); 
-  textSize(40); 
-  fill(255, 0, 0);  
-  textSize(25);
   if (gameOver) { 
     if (mousePressed) { 
       if (mouseX > x && mouseX < x+w && mouseY > y && mouseY < y+h) { 
@@ -24,4 +20,8 @@ void draw() {
       }
     }
   }
+  //restart button
+  fill(0, 0, 255);
+  rect(400, 300, h);
+  text
 }
