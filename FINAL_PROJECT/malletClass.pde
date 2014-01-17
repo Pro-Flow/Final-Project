@@ -9,6 +9,7 @@ class mallet {
     vel =  new PVector(ramdom(-1, 1), random(-2, 0));
     d = 30;
     c = color(random(360), 100, 100);
+  }
     
     void display(){
       fill(c);
@@ -16,6 +17,7 @@ class mallet {
     }
     
     void keyPressed(){
+      //wasd
       if(key == 'w'){
         y--;
       }
@@ -23,7 +25,7 @@ class mallet {
         x--;
       }
       if(key == 's'){
-        y++
+        y++;
       }
       if(key =='d'){
         x++;
@@ -44,6 +46,7 @@ class mallet {
       x++;
       y++;
     }
+<<<<<<< HEAD
     }
       
     void wasd(){
@@ -52,6 +55,9 @@ class mallet {
       }
     }
       
+=======
+    }     
+>>>>>>> origin/Skeleton
     
     void arrows(){
       //WASD & Arrow Key movement
@@ -65,7 +71,7 @@ class mallet {
         if(keyCode == RIGHT){
           x++;
         }
-        if(keyCODE == DOWN){
+        if(keyCode == DOWN){
           y++;
         }
         if(keyCode == LEFT && keyCode == UP){
@@ -88,7 +94,7 @@ class mallet {
     }
     
     void move(){
-      void wasd(){
+      void keyPressed(){
         void arrows(){
         }
       }
@@ -98,6 +104,7 @@ class mallet {
       if(loc.dist(p.loc) < d/2 + p.d/2){
         vel.mult(-1);
       }
+    }
     }
       
    

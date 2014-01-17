@@ -8,11 +8,21 @@ class bonus {
     loc = new PVector(x, y);
     d = 20;
     c = color(random(360), 100, 100);
+  }
     
     void display(){
+      if(score1 || score2 >= 5){
       fill(c);
       ellipse(loc.x, loc.y, d, d);
     }
   }
+     void touch(puck p){
+      if(loc.dist(p.loc) <20){
+        score1 += 3;
+        score2 += 3;
+        loc.y = 0;
+      }
+    }
+}
  
     
