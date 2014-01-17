@@ -8,7 +8,7 @@ class mallet {
     loc = new PVector (random(width), random(height));
     vel =  new PVector(random(-1, 1), random(-2, 0));
     d = 30;
-    c = color(random(360), 100, 100);
+    c = color(random(255), random(255), random(255));
   }
 
   void display() {
