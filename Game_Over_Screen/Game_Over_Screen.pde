@@ -28,7 +28,7 @@ void draw() {
   }
   //to end/close the game...
   if (gameOver) { 
-    if (mousePressed) { 
+    if (mousePressed == true) { 
       if (mouseX > x-w/2 && mouseX < x+w/2 && mouseY > y-h/2 && mouseY < y+h) { 
         exit();
       }
