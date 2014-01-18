@@ -28,15 +28,21 @@ void setup () {
   score1 = 0;
   score2 = 0;
   world=loadImage("bg.jpg");
+  textAlign(CENTER);
 }
 
 void draw() {
   if (!run) {
     background(0);
-    rect(400, 200, 100, 100); // start button
-    text("Start", 400, 300); 
-    rect(400, 350, 100, 100); //instructions button
-    text("Instructions", 400, 360);
+    fill(20, 100, 100);
+    rect(350, 200, 100, 100); // start button
+    fill(255, 0, 0);
+    text("Start", 400, 250); 
+
+    fill(20, 100, 100);
+    rect(350, 350, 100, 100); //instructions button
+    fill(255, 0, 0);
+    text("Instructions", 400, 400);
   }
   if (run) {
     background(0);
@@ -69,15 +75,15 @@ void draw() {
     rect(775, 320, vertwidth, vertheight, 20);//v
     stroke(190);
     line(405, 10, 405, 490);
-    p1.display();
-    p1.bounce();
-    p1.reset();
     m1.display();
     m1.arrows();
     m1.checkPuck(p1);
     m2.display();
     m2.wasd();
     m2.checkPuck(p1);
+    p1.display();
+    p1.bounce();
+    p1.reset();
     if (instructions == true) {
       text("Here are the instructions:", width/4, height/4);
       if (key == 'b') {
@@ -101,16 +107,16 @@ void draw() {
 
 
 void mousePressed() {
-  if (mouseX>400 && mouseX<500 && mouseY>200 && mouseY<300) {//click to start game
+  if (mouseX>350 && mouseX<450 && mouseY>200 && mouseY<300) {//click to start game
     run = true;
   }
-  if (mouseX<400 && mouseX>500 && mouseY<200 && mouseY>300) {
+  if (mouseX<350 && mouseX>0 && mouseY<200 && mouseY>300) {
     run=false;
   }
-  if (mouseX>400 && mouseX<500 && mouseY>350 && mouseY<450) {
+  if (mouseX>350 && mouseX<450 && mouseY>350 && mouseY<450) {
     instructions = true;
   }
-  if (mouseX<400 && mouseX>500 && mouseY<350 && mouseY>450) {
+  if (mouseX<350 && mouseX>450 && mouseY<350 && mouseY>450) {
     instructions = false;
   }
 }
