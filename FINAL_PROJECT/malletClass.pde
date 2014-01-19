@@ -18,13 +18,13 @@ class mallet {
 
   void keyPressed() {
     if (keyPressed) {
-      if (key == 'w') {
+      if (key == 's') {
         loc.y+=3;
       }
       if (key == 'a') {
         loc.x-=3;
       }
-      if (key == 's') {
+      if (key == 'w') {
         loc.y-=3;
       }
       if (key =='d') {
