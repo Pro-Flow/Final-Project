@@ -7,7 +7,7 @@ class puck {
   puck (){
     loc = new PVector(width/2, height/2);
     vel = new PVector(random(-1, 1), random(-2, 0));
-    d = 40;
+    d = 20;
     c = color(random(255), random(255), random(255));
   }
 
@@ -19,16 +19,16 @@ class puck {
   void bounce() {
     //makes puck bounce
     loc.add(vel);
-    if (loc.x + d/2 > width - 30) {
+    if (loc.x + d/2 > width - 32) {
       vel.x = -vel.x;
     }
-    if (loc.x - d/2 < 30) {
+    if (loc.x - d/2 < 32) {
       vel.x = -vel.x;
     }
-    if (loc.y + d/2 > height -30) {
+    if (loc.y + d/2 > height -32) {
       vel.y = -vel.y;
     }
-    if (loc.y - d/2 < 30) {
+    if (loc.y - d/2 < 32) {
       vel.y = -vel.y;
     }
   }

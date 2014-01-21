@@ -19,8 +19,7 @@ void setup () {
   p1 = new puck();
   m1 = new mallet();
   m2 = new mallet();
-  size(800, 505);
-  background (0);
+  size(800, 500);
   run = false;
   gameOver = false;
   instructions = false;
@@ -34,18 +33,18 @@ void draw() {
   if (!run) {
     textSize(15);
     background(0);
-    fill(20, 100, 100);
+    fill(17, 4, 142);
     rect(350, 200, 100, 100); // start button
-    fill(255, 0, 0);
+    fill(255);
     text("Start", 400, 250); 
 
-    fill(20, 100, 100);
+    fill(17, 4, 142);
     rect(350, 350, 100, 100); //instructions button
-    fill(255, 0, 0);
+    fill(255);
     text("Instructions", 400, 400);
   }
   if (run) {
-    background(world);
+    background(0);
     stroke(155, 144, 144);//2 goals
     noFill();
     ellipse(0, 250, 170, 140);
@@ -76,16 +75,21 @@ void draw() {
     rect(775, 320, vertwidth, vertheight, 20);//v
     stroke(190);
     line(width/2, 10, width/2, 490);
+     p1.display();
+    p1.bounce();
+    p1.reset();
     m1.display();
     m1.arrows();
     m1.checkPuck(p1);
-    m2.display();
+    m2.display2();
     m2.wasd();
     m2.checkPuck(p1);
-    p1.display();
-    p1.bounce();
-    p1.reset();
-    if (instructions == true) {
+    textAlign(CENTER);
+    textSize(30);
+    fill(255);
+    text(score1, width/6, height/6);
+    text(score2, width*0.8, height/6);
+    if (instructions==true) {
       background(0);
       text("Here are the instructions:", width/2, height/2);
   }
