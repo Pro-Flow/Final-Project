@@ -104,6 +104,7 @@ class mallet {
     if (loc.dist(p1.loc) < d/2 + p1.d/2) {
       p1.vel.mult(-1);
     }
+    //if(loc.dist(p1.loc) 
 
     /*if (loc.dist(p1.loc.x) < d/2 + p1.d/2) {
       p1.vel.x = -1;
