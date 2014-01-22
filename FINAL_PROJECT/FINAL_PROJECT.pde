@@ -15,6 +15,7 @@ int horiwidth=385;
 int horiheight=15;
 int d = 2;
 PImage world;
+PImage galaxy;
 
 void setup () {
   p1 = new puck();
@@ -27,13 +28,17 @@ void setup () {
   score1 = 0;
   score2 = 0;
   world = loadImage("earthlights.jpg");
+  galaxy = loadImage("space.jpg");
   textAlign(CENTER);
 }
 
 void draw() {
   if (!run) {
     textSize(15);
-    background(0);
+    background(galaxy);
+    textSize(30);
+    text("Welcome to Astro Hockey!", width/2, height/5);
+    textSize(15);
     fill(17, 4, 142);
     rect(350, 200, 100, 100, 30); // start button
     fill(255);
