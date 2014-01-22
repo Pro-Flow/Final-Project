@@ -1,3 +1,4 @@
+ArrayList <Particle> particles = new ArrayList<Particle>();
 float x=0;
 float y=0;
 puck p1;
@@ -75,7 +76,7 @@ void draw() {
     rect(775, 320, vertwidth, vertheight, 20);//v
     stroke(190);
     line(width/2, 10, width/2, 490);
-     p1.display();
+    p1.display();
     p1.bounce();
     p1.reset();
     m1.display();
@@ -84,31 +85,43 @@ void draw() {
     m2.display2();
     m2.wasd();
     m2.checkPuck(p1);
-    textAlign(CENTER);
-    textSize(30);
-    fill(255);
-    text(score1, width/6, height/6);
-    text(score2, width*0.8, height/6);
-    if (instructions==true) {
-      background(0);
-      text("Here are the instructions:", width/2, height/2);
-  }
-    
-    if (key == 'b') {
-      run = false;
-      //display instruction screen here
+    println(particles.size());
+    for (int i = 0; i < 5; i++) {
+      particles.add(new Particle(mouseX, mouseY));
     }
-    if (score1 >= 10|| score2 >= 10) {
-      gameOver = true;
-    }
-    if (gameOver == true) {
-      run = false;
-
-      if (key == 'r') {
-        run = true;
+    for (int i = particles.size()-1; i >= 0; i--) {
+      Particle p = particles.get(i);
+      p.display();
+      p.update();
+      if (p.life <= 0 ) {
+        particles.remove(i);
       }
+      textAlign(CENTER);
+      textSize(30);
+      fill(255);
+      text(score1, width/6, height/6);
+      text(score2, width*0.8, height/6);
+      if (instructions==true) {
+        background(0);
+        text("Here are the instructions:", width/2, height/2);
+      }
+
+      if (key == 'b') {
+        run = false;
+        //display instruction screen here
+      }
+      if (score1 >= 10|| score2 >= 10) {
+        gameOver = true;
+      }
+      if (gameOver == true) {
+        run = false;
+
+        if (key == 'r') {
+          run = true;
+        }
+      }
+      //insert end screen  here
     }
-    //insert end screen  here
   }
 }
 
