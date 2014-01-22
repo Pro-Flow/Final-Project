@@ -35,12 +35,12 @@ void draw() {
     textSize(15);
     background(0);
     fill(17, 4, 142);
-    rect(350, 200, 100, 100); // start button
+    rect(350, 200, 100, 100, 30); // start button
     fill(255);
     text("Start", 400, 250); 
 
     fill(17, 4, 142);
-    rect(350, 350, 100, 100); //instructions button
+    rect(350, 350, 100, 100,30); //instructions button
     fill(255);
     text("Instructions", 400, 400);
   }
