@@ -26,7 +26,7 @@ void setup () {
   instructions = false;
   score1 = 0;
   score2 = 0;
-  world = loadImage("bg.jpg");
+  world = loadImage("earthlights.jpg");
   textAlign(CENTER);
 }
 
@@ -45,7 +45,7 @@ void draw() {
     text("Instructions", 400, 400);
   }
   if (run) {
-    background(0);
+    background(world);
     stroke(155, 144, 144);//2 goals
     noFill();
     ellipse(0, 250, 170, 140);
