@@ -24,33 +24,33 @@ class mallet {
   void keyPressed() {
     if (keyPressed) {
       if (key == 's') {
-        loc1.y+=5;
+        loc.y+=5;
       }
       if (key == 'a') {
-        loc1.x-=5;
+        loc.x-=5;
       }
       if (key == 'w') {
-        loc1.y-=5;
+        loc.y-=5;
       }
       if (key =='d') {
-        loc1.x+=5;
+        loc.x+=5;
       }
 
       if (key == 'w' && key == 'a') {
-        loc1.x-=5;
-        loc1.y+=5;
+        loc.x-=5;
+        loc.y+=5;
       }
       if (key == 'w' && key == 'd') {
-        loc1.x+=5;
-        loc1.y+=5;
+        loc.x+=5;
+        loc.y+=5;
       }
       if (key == 's' && key == 'a') {
-        loc1.x-=5;
-        loc1.y-=5;
+        loc.x-=5;
+        loc.y-=5;
       }
       if (key == 's' && key == 'd') {
-        loc1.x+=5; 
-        loc1.y-=5;
+        loc.x+=5; 
+        loc.y-=5;
       }
     }
   }
@@ -59,32 +59,32 @@ class mallet {
     //WASD & Arrow Key movement
     if (keyPressed && key == CODED) {
       if (keyCode == LEFT) {
-        loc.x-=5;
+        loc1.x-=5;
       }
       if (keyCode == UP) {
-        loc.y-=5;
+        loc1.y-=5;
       }
       if (keyCode == RIGHT) {
-        loc.x+=5;
+        loc1.x+=5;
       }
       if (keyCode == DOWN) {
-        loc.y+=5;
+        loc1.y+=5;
       }
       if (keyCode == LEFT && keyCode == UP) {
-        loc.x-=5;
-        loc.y-=5;
+        loc1.x-=5;
+        loc1.y-=5;
       }
       if (keyCode == RIGHT && keyCode == UP) {
-        loc.x+=5;
-        loc.y-=5;
+        loc1.x+=5;
+        loc1.y-=5;
       }
       if (keyCode == DOWN && keyCode == LEFT) {
-        loc.x-=5;
-        loc.y+=5;
+        loc1.x-=5;
+        loc1.y+=5;
       }
       if (keyCode == DOWN && keyCode == RIGHT) {
-        loc.x+=5;
-        loc.y+=5;
+        loc1.x+=5;
+        loc1.y+=5;
       }
     }
   }

@@ -81,10 +81,10 @@ void draw() {
     p1.bounce();
     p1.reset();
     m1.display();
-    m1.arrows();
+    m1.wasd();
     m1.checkPuck(p1);
     m2.display2();
-    m2.wasd();
+    m2.arrows();
     m2.checkPuck(p1);
     println(particles.size());
     for (int i = 0; i < 5; i++) {
