@@ -76,6 +76,7 @@ void draw() {
     rect(775, 320, vertwidth, vertheight, 20);//v
     stroke(190);
     line(width/2, 10, width/2, 490);
+    stroke(255);
     p1.display();
     p1.bounce();
     p1.reset();
@@ -87,7 +88,7 @@ void draw() {
     m2.checkPuck(p1);
     println(particles.size());
     for (int i = 0; i < 5; i++) {
-      particles.add(new Particle(mouseX, mouseY));
+      particles.add(new Particle(m1.loc.x, m1.loc.y));
     }
     for (int i = particles.size()-1; i >= 0; i--) {
       Particle p = particles.get(i);
@@ -124,6 +125,7 @@ void draw() {
     }
   }
 }
+
 
 
 void mousePressed() {
