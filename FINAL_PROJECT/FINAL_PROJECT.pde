@@ -102,33 +102,37 @@ void draw() {
       fill(255);
       text(score1, width/6, height/6);
       text(score2, width*0.8, height/6);
+    }
+  }
       if (instructions==true) {
         background(0);
+        fill(255);
         text("Here are the instructions:", width/2, height/2);
       }
 
-      if (key == 'b') {
-        run = false;
-        //display instruction screen here
-      }
       if (score1 >= 10|| score2 >= 10) {
         gameOver = true;
       }
       if (gameOver == true) {
         run = false;
+        text("Gameeee is Over", width/2, height/2);
 
         if (key == 'r') {
           run = true;
         }
       }
       //insert end screen  here
+      if(keyPressed){
+      if(key == 'b'){
+        run = false;
+        instructions = false; //display instructions screen here
     }
   }
 }
 
 
 
-void mousePressed() {
+void mouseClicked() {
   if (mouseX>350 && mouseX<450 && mouseY>200 && mouseY<300) {//click to start game
     run = true;
   }
