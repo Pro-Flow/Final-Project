@@ -1,9 +1,11 @@
 ArrayList <Particle> particles = new ArrayList<Particle>();
-float x=0;
-float y=0;
 puck p1;
 mallet m1;
 mallet m2;
+bonus b1;
+float x=0;
+float y=0;
+float threshold = 3000;
 boolean run;
 boolean gameOver;
 boolean instructions;
@@ -13,6 +15,7 @@ int vertwidth=15;
 int vertheight=150;
 int horiwidth=385;
 int horiheight=15;
+int oldTime = 0;
 int d = 2;
 PImage world;
 PImage galaxy;
@@ -22,6 +25,7 @@ void setup () {
   p1 = new puck();
   m1 = new mallet();
   m2 = new mallet();
+  b1 = new bonus();
   size(800, 500);
   run = false;
   gameOver = false;
@@ -91,6 +95,21 @@ void draw() {
     m2.display2();
     m2.arrows();
     m2.checkPuck(p1);
+    //adding time when bonus items come up (at 3 and 5 minutes)
+    if(millis() - oldTime >= threshold){
+      threshold-=10;
+      oldTime = millis();
+    }
+    if(millis() == 180000){
+      b1.display();
+      b1.reset();
+      b1.touch(p1);
+    }
+    if(millis() == 300000){
+      b1.display();
+      b1.reset();
+      b1.touch(p1);
+    }
     println(particles.size());
     for (int i = 0; i < 5; i++) {
       particles.add(new Particle(m1.loc.x, m1.loc.y));
@@ -117,11 +136,12 @@ void draw() {
     rectMode(CENTER);
     text(s, width/2, height/2, 500, 300);
   }
-  /*if (keyPressed) {
+  if (keyPressed) {
     if(key == 'b'){
-      run = false; //display instructions screen here
+      run = false;
+     instructions = false; //display instructions screen here
     }
-  }*/
+  }
   
 
   if (score1 >= 10|| score2 >= 10) {
@@ -158,15 +178,15 @@ void mouseClicked() {
   if (mouseX>350 && mouseX<450 && mouseY>200 && mouseY<300) {//click to start game
     run = true;
   }
-  /*if (mouseX<350 && mouseX>0 && mouseY<200 && mouseY>300) {
+  if (mouseX<350 && mouseX>0 && mouseY<200 && mouseY>300) {
     run=false;
-  }*/
+  }
   if (mouseX>350 && mouseX<450 && mouseY>350 && mouseY<450) {
     instructions = true;
   }
-  /*if (mouseX<350 && mouseX>450 && mouseY<350 && mouseY>450) {
+  if (mouseX<350 && mouseX>450 && mouseY<350 && mouseY>450) {
     instructions = false;
-  }*/
+  }
 }
 
 

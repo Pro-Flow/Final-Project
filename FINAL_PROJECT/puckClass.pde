@@ -4,11 +4,13 @@ class puck {
   float d;
   color c;
 
+
   puck (){
     loc = new PVector(width/2, height/2);
     vel = new PVector(random(0,2), random(-2, 2));
     d = 20;
     c = color(0);
+
   }
 
   void display() {
