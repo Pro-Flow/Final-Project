@@ -1,13 +1,14 @@
 class mallet {
-  PVector loc;
+  PVector loc, vel;
   float d;
   color c;
   int which;
 
   mallet (float x, float y, int wh) {
     loc = new PVector (x, y);
+    vel = new PVector(0,0);
     d = 30;
-    c = color(12, 4, 142);
+    c = color(255, 0, 0);
     which = wh;
   }
 
@@ -106,9 +107,8 @@ class mallet {
     while (p1.loc.dist (loc) <p1.d/2 + d/2) {
       p1.loc.add(ab);
     }
-
     PVector impulse = new PVector();
-    float impactSpeed = 5;
+    float impactSpeed = 0.01;
     impulse.set(ab);
     impulse.mult(impactSpeed);
     p1.vel.add(impulse);
