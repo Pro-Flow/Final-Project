@@ -15,11 +15,11 @@ class mallet {
     fill(c);
     ellipse(loc.x, loc.y, d, d);
   }
-  void display2(){
+  void display2() {
     fill(c);
     ellipse(loc1.x, loc1.y, d, d);
   }
-    
+
 
   void keyPressed() {
     if (keyPressed) {
@@ -98,27 +98,29 @@ class mallet {
     keyPressed();
     arrows();
   }
-  
+
 
   void checkPuck(puck p1) {
     if (loc.dist(p1.loc) < d/2 + p1.d/2) {
       p1.vel.mult(-1);
     }
+    //if(loc.x < d/2+p1.d/2 || loc.y < d/2+p1.d/2){
+
+
     //if(loc.dist(p1.loc) 
 
     /*if (loc.dist(p1.loc.x) < d/2 + p1.d/2) {
-      p1.vel.x = -1;
-    }
-    if (loc.dist(p1.loc.x) > d/2 - p1.d/2) {
-      p1.vel.x = 1;
-    }
-    if (p1.loc.y < mallet.l.y) {
-      p1.vel.y = -1;
-    }
-    if (p1.loc.y > mallet.l.y) {
-      p1.vel.y = 1;
-    }
-  }*/
-}
+     p1.vel.x = -1;
+     }
+     if (loc.dist(p1.loc.x) > d/2 - p1.d/2) {
+     p1.vel.x = 1;
+     }
+     if (p1.loc.y < mallet.l.y) {
+     p1.vel.y = -1;
+     }
+     if (p1.loc.y > mallet.l.y) {
+     p1.vel.y = 1;
+     }*/
+  }
 }
 

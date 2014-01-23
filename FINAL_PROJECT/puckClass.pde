@@ -6,7 +6,7 @@ class puck {
 
   puck (){
     loc = new PVector(width/2, height/2);
-    vel = new PVector(random(-1, 1), random(-2, 0));
+    vel = new PVector(random(0,2), random(-2, 2));
     d = 20;
     c = color(0);
   }

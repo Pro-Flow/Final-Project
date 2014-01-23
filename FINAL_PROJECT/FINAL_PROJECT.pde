@@ -16,6 +16,7 @@ int horiheight=15;
 int d = 2;
 PImage world;
 PImage galaxy;
+String s = "Player 1 uses arrow keys to move mallet. Player 2 uses W,A,S,D keys to move other mallet. Push the puck into the opposite goal, while guarding the goal on your side. The first player to reach 10 points wins. Press p to end the game.";
 
 void setup () {
   p1 = new puck();
@@ -43,9 +44,8 @@ void draw() {
     rect(350, 200, 100, 100, 30); // start button
     fill(255);
     text("Start", 400, 250); 
-
     fill(17, 4, 142);
-    rect(350, 350, 100, 100,30); //instructions button
+    rect(350, 350, 100, 100, 30); //instructions button
     fill(255);
     text("Instructions", 400, 400);
   }
@@ -109,30 +109,47 @@ void draw() {
       text(score2, width*0.8, height/6);
     }
   }
-      if (instructions==true) {
-        background(0);
-        fill(255);
-        text("Here are the instructions:", width/2, height/2);
-      }
-
-      if (score1 >= 10|| score2 >= 10) {
-        gameOver = true;
-      }
-      if (gameOver == true) {
-        run = false;
-        text("Gameeee is Over", width/2, height/2);
-
-        if (key == 'r') {
-          run = true;
-        }
-      }
-      //insert end screen  here
-      if(keyPressed){
-      if(key == 'b'){
-        run = false;
-        instructions = false; //display instructions screen here
-    }
+  if (instructions==true) {
+    background(0);
+    fill(255);
+    textSize(20);
+    textAlign(CENTER);
+    rectMode(CENTER);
+    text(s, width/2, height/2, 500, 300);
   }
+  /*if (keyPressed) {
+    if(key == 'b'){
+      run = false; //display instructions screen here
+    }
+  }*/
+  
+
+  if (score1 >= 10|| score2 >= 10) {
+    gameOver = true;
+  }
+  if (gameOver == true) {
+    background(0);  
+    fill(255); 
+    textSize(75);
+    textAlign(CENTER);
+    text("GAME OVER", width/2, height/4);
+    //game over button
+    rectMode(CENTER);
+    fill(17, 4, 142); 
+    rect(width*3/4, height*3/4, 100, 100, 30); 
+    //game over button text
+    fill(255);
+    textSize(25);
+    text("END", width*3/4, (height*3/4)+10);
+    //close the game
+    if (mousePressed == true) { 
+      if (mouseX > (width*3/4)-50 && mouseX < (width*3/4)+50 && mouseY > (height*3/4)-50 && mouseY < (height*3/4)+50) { 
+        exit();
+      }
+    }
+}
+
+
 }
 
 
@@ -141,21 +158,20 @@ void mouseClicked() {
   if (mouseX>350 && mouseX<450 && mouseY>200 && mouseY<300) {//click to start game
     run = true;
   }
-  if (mouseX<350 && mouseX>0 && mouseY<200 && mouseY>300) {
+  /*if (mouseX<350 && mouseX>0 && mouseY<200 && mouseY>300) {
     run=false;
-  }
+  }*/
   if (mouseX>350 && mouseX<450 && mouseY>350 && mouseY<450) {
     instructions = true;
   }
-  if (mouseX<350 && mouseX>450 && mouseY<350 && mouseY>450) {
+  /*if (mouseX<350 && mouseX>450 && mouseY<350 && mouseY>450) {
     instructions = false;
-  }
+  }*/
 }
 
 
 void keyPressed() {
-  //I think this will pause game, now sure yet lol
-  //Press p to pause
+  //Press p to end game
   if (key == 'p') {
     gameOver = !gameOver;
   }
