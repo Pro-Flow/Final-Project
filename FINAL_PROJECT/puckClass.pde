@@ -1,13 +1,14 @@
 class puck {
 
-  PVector loc, vel;
+  PVector loc;
+  PVector vel;
   float d;
   color c;
 
 
   puck (){
     loc = new PVector(width/2, height/2);
-    vel = new PVector(random(0,2), random(-2, 2));
+    vel = new PVector(0,0);
     d = 20;
     c = color(0);
 
@@ -18,7 +19,7 @@ class puck {
     ellipse(loc.x, loc.y, d, d);
   }
 
-  void bounce() {
+  void update() {
     //makes puck bounce
     loc.add(vel);
     if (loc.x + d/2 > width - 32) {
@@ -33,7 +34,19 @@ class puck {
     if (loc.y - d/2 < 32) {
       vel.y = -vel.y;
     }
+    if(loc.x + (d/2)/4 < 0 || pos.x - ((d/2)/4) > width){
+      die();
   }
+  
+  /*void die(){
+    dead = true;
+  }
+  
+  boolean isDead(){
+    return dead;
+  }*/
+  
+  
 
   void reset() {
     /*Resets puck to the middle of table if it goes through one

@@ -99,16 +99,29 @@ class mallet {
     arrows();
   }
 
-
-  void checkPuck(puck p1) {
-    if (loc.dist(p1.loc) < d/2 + p1.d/2) {
-      p1.vel.mult(-1);
+  void bounce(puck p1) {
+    PVector ab = new PVector();
+    ab.set(p1.loc);
+    ab.sub(mallet.loc);
+    ab.normalize();
+    while(p1.loc.dist (mallet.loc) <p1.d/2 + mallet.d/2){
+      puck.loc.add(ab);
     }
-    //if(loc.x < d/2+p1.d/2 || loc.y < d/2+p1.d/2){
-
-
-    //if(loc.dist(p1.loc) 
-
+    PVector impulse = new PVector();
+    float impactSpeed = 5;
+    impulse.set(ab);
+    impulse.mult(impactSpeed);
+    p1.vel.add(impulse);
+  }
+    /*void checkPuck(puck p1) {
+     if (loc.dist(p1.loc) < d/2 + p1.d/2) {
+     p1.vel.mult(-1);
+     }
+     //if(loc.x < d/2+p1.d/2 || loc.y < d/2+p1.d/2){
+     
+     
+     //if(loc.dist(p1.loc) 
+     
     /*if (loc.dist(p1.loc.x) < d/2 + p1.d/2) {
      p1.vel.x = -1;
      }
