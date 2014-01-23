@@ -22,11 +22,11 @@ PImage galaxy;
 String s = "Player 1 uses arrow keys to move mallet. Player 2 uses W,A,S,D keys to move other mallet. Push the puck into the opposite goal, while guarding the goal on your side. The first player to reach 10 points wins. Press p to end the game.";
 
 void setup () {
-  p1 = new puck();
-  m1 = new mallet();
-  m2 = new mallet();
-  b1 = new bonus();
   size(800, 500);
+  p1 = new puck();
+  m1 = new mallet(width/6, height*2.5, 0);
+  m2 = new mallet(width*7.8, height*2.5, 1);
+  b1 = new bonus();
   run = false;
   gameOver = false;
   instructions = false;
@@ -86,26 +86,35 @@ void draw() {
     stroke(190);
     line(width/2, 10, width/2, 490);
     stroke(255);
-    p1.display();
-    p1.bounce();
+
     p1.reset();
+    if (p1.loc.dist(m1.loc) < p1.d/2 + m1.d/2) {
+      m1.bounce(p1);
+    }
+    if (p1.loc.dist(m2.loc) < p1.d/2 + m2.d/2) {
+      m2.bounce(p1);
+    }
+
+
+    p1.display();
+    p1.update();
     m1.display();
     m1.wasd();
-    m1.checkPuck(p1);
-    m2.display2();
+    //    m1.bounce(p1);
+    m2.display();
     m2.arrows();
-    m2.checkPuck(p1);
+    //    m2.bounce(p1);
     //adding time when bonus items come up (at 3 and 5 minutes)
-    if(millis() - oldTime >= threshold){
+    if (millis() - oldTime >= threshold) {
       threshold-=10;
       oldTime = millis();
     }
-    if(millis() == 180000){
+    if (millis() == 180000) {
       b1.display();
       b1.reset();
       b1.touch(p1);
     }
-    if(millis() == 300000){
+    if (millis() == 300000) {
       b1.display();
       b1.reset();
       b1.touch(p1);
@@ -137,12 +146,12 @@ void draw() {
     text(s, width/2, height/2, 500, 300);
   }
   if (keyPressed) {
-    if(key == 'b'){
+    if (key == 'b') {
       run = false;
-     instructions = false; //display instructions screen here
+      instructions = false; //display instructions screen here
     }
   }
-  
+
 
   if (score1 >= 10|| score2 >= 10) {
     gameOver = true;
@@ -167,10 +176,9 @@ void draw() {
         exit();
       }
     }
+  }
 }
 
-
-}
 
 
 
