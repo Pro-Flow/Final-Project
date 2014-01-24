@@ -19,6 +19,7 @@ int oldTime = 0;
 int d = 2;
 PImage world;
 PImage galaxy;
+PImage sky;
 //The text for the instruction screen is below
 String s = "Player 1 uses arrow keys to move mallet. Player 2 uses W,A,S,D keys to move other mallet. Push the puck into the opposite goal, while guarding the goal on your side. The first player to reach 10 points wins. Press p to end the game.";
 
@@ -35,6 +36,7 @@ void setup () {
   score2 = 0;
   world = loadImage("earthlights.jpg");
   galaxy = loadImage("space.jpg");
+  sky = loadImage("starrysky.jpg");
   textAlign(CENTER);
 }
 
@@ -145,7 +147,7 @@ void draw() {
     }
   }
   if (instructions==true) {
-    background(0);
+    background(sky);
     fill(255);
     textSize(20);
     textAlign(CENTER);
