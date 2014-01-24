@@ -149,13 +149,12 @@ void draw() {
     fill(255);
     textSize(20);
     textAlign(CENTER);
-    rectMode(CENTER);
-    text(s, width/2, height/2, 500, 300);
+    text(s, width/6, height/6, 500, 300);
   }
   if (keyPressed) {
     if (key == 'b') {
       run = false;
-      instructions = false; //display instructions screen here
+      instructions = false;
     }
   }
 
