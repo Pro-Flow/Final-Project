@@ -4,8 +4,8 @@ class Particle {
   int d;
   int life;
 
-  Particle(float x, float y) {
-    loc = new PVector(x, y);
+  Particle(PVector l) {
+    loc = l.get();
     vel = new PVector (random(-1, 1), random(-2, 0));
     acc = new PVector (0, 0.1);
     d = 10;
