@@ -100,6 +100,7 @@ class mallet {
   }
 
   void bounce(puck p1) {
+    //This funtion helps with the bouncing motion  of the puck
     PVector ab = new PVector();
     ab.set(p1.loc);
     ab.sub(loc);

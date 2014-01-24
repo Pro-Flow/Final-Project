@@ -19,6 +19,7 @@ int oldTime = 0;
 int d = 2;
 PImage world;
 PImage galaxy;
+//The text for the instruction screen is below
 String s = "Player 1 uses arrow keys to move mallet. Player 2 uses W,A,S,D keys to move other mallet. Push the puck into the opposite goal, while guarding the goal on your side. The first player to reach 10 points wins. Press p to end the game.";
 
 void setup () {
@@ -54,6 +55,7 @@ void draw() {
     text("Instructions", 400, 400);
   }
   if (run) {
+    //This is the actual cod for the game
     background(world);
     stroke(155, 144, 144);//2 goals
     noFill();
@@ -64,11 +66,13 @@ void draw() {
     ellipse(width/2, height/2, 200, 200);
     noStroke();//little air holes
     fill(190);
+    //This creates the dots for the air holes
     for (int x=d/2; x<width; x+=10) {
       for (int y=d/2; y<height; y+=10) {
         ellipse(x, y, d, d);
       }
     }
+    //decorative rectangles
     fill(255);
     strokeWeight(4);
     stroke(238, 242, 51); //yellow rectangle
@@ -86,6 +90,7 @@ void draw() {
     stroke(190);
     line(width/2, 10, width/2, 490);
     stroke(255);
+    //particles
     println(particles.size());
     for (int i = 0; i < 5; i++) {
       particles.add(new Particle(m1.loc));
@@ -107,14 +112,15 @@ void draw() {
         m2.bounce(p1);
       }
       stroke(255);
+      //calling functions
       p1.display();
       p1.update();
       m1.display();
       m1.wasd();
-      //    m1.bounce(p1);
+      //m1.bounce(p1);
       m2.display();
       m2.arrows();
-      //    m2.bounce(p1);
+      //m2.bounce(p1);
       //adding time when bonus items come up (at 3 and 5 minutes)
       if (millis() - oldTime >= threshold) {
         threshold-=10;
@@ -130,7 +136,7 @@ void draw() {
         b1.reset();
         b1.touch(p1);
       }
-
+//this displays the score
       textAlign(CENTER);
       textSize(30);
       fill(255);
@@ -158,6 +164,7 @@ void draw() {
     gameOver = true;
   }
   if (gameOver == true) {
+    //displays game over screen with exit button
     background(0);  
     fill(255); 
     textSize(75);
@@ -185,9 +192,9 @@ void draw() {
 
 void mouseClicked() {
   if (mouseX>350 && mouseX<450 && mouseY>200 && mouseY<300) {//click to start game
-    if(!instructions){
+    if (!instructions) {
       run = true;
-  }
+    }
   }
   if (mouseX<350 && mouseX>0 && mouseY<200 && mouseY>300) {
     run=false;
