@@ -21,7 +21,7 @@ PImage world;
 PImage galaxy;
 PImage sky;
 //The text for the instruction screen is below
-String s = "Player 1 uses arrow keys to move mallet. Player 2 uses W,A,S,D keys to move other mallet. Push the puck into the opposite goal, while guarding the goal on your side. The first player to reach 10 points wins. Press p to end the game.";
+String s = "Player 1 uses arrow keys to move mallet. Player 2 uses W,A,S,D keys to move other mallet. Push the puck into the opposite goal, while guarding the goal on your side. The first player to reach 10 points wins. Press p to end the game. Press b to go back to the start screen.";
 
 void setup () {
   size(800, 500);
