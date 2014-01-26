@@ -100,6 +100,10 @@ class mallet {
   }
 
   void bounce(puck p1) {
+<<<<<<< HEAD
+=======
+    //This funtion helps with the bouncing motion  of the puck
+>>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
     PVector ab = new PVector();
     ab.set(p1.loc);
     ab.sub(loc);
@@ -113,8 +117,12 @@ class mallet {
     impulse.mult(impactSpeed);
     p1.vel.add(impulse);
   }
+<<<<<<< HEAD
   }
 
 
       
+=======
+}
+>>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
 
