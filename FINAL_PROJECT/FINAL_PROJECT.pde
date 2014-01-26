@@ -93,6 +93,10 @@ void draw() {
     line(width/2, 10, width/2, 490);
     stroke(255);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    //particles
+>>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
 =======
     //particles
 >>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
@@ -118,6 +122,10 @@ void draw() {
       }
       stroke(255);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      //calling functions
+>>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
 =======
       //calling functions
 >>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
@@ -126,15 +134,21 @@ void draw() {
       m1.display();
       m1.wasd();
 <<<<<<< HEAD
+<<<<<<< HEAD
       //    m1.bounce(p1);
       m2.display();
       m2.arrows();
       //    m2.bounce(p1);
 =======
+=======
+>>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
       //m1.bounce(p1);
       m2.display();
       m2.arrows();
       //m2.bounce(p1);
+<<<<<<< HEAD
+>>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
+=======
 >>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
       //adding time when bonus items come up (at 3 and 5 minutes)
       if (millis() - oldTime >= threshold) {
@@ -152,7 +166,11 @@ void draw() {
         b1.touch(p1);
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+//this displays the score
+>>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
 =======
 //this displays the score
 >>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
@@ -174,7 +192,11 @@ void draw() {
     if (key == 'b') {
       run = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
       instructions = false; //display instructions screen here
+=======
+      instructions = false;
+>>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
 =======
       instructions = false;
 >>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
@@ -208,12 +230,16 @@ void draw() {
     }
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 <<<<<<< HEAD
 }
 }
 =======
 >>>>>>> cffe1145c350a9f6bc2bfe3f851c7d60e7c6662a
+=======
+}
+>>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
 =======
 }
 >>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
@@ -224,9 +250,15 @@ void draw() {
 void mouseClicked() {
   if (mouseX>350 && mouseX<450 && mouseY>200 && mouseY<300) {//click to start game
 <<<<<<< HEAD
+<<<<<<< HEAD
     if(!instructions){
       run = true;
   }
+=======
+    if (!instructions) {
+      run = true;
+    }
+>>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
 =======
     if (!instructions) {
       run = true;

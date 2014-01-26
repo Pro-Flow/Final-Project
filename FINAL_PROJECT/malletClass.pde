@@ -101,6 +101,10 @@ class mallet {
 
   void bounce(puck p1) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    //This funtion helps with the bouncing motion  of the puck
+>>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
 =======
     //This funtion helps with the bouncing motion  of the puck
 >>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
@@ -118,11 +122,14 @@ class mallet {
     p1.vel.add(impulse);
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
   }
 
 
       
 =======
+=======
+>>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
 }
 >>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
 
