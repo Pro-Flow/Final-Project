@@ -38,7 +38,7 @@ void setup () {
 }
 
 void draw() {
-  if (!run) {
+  if (!run) {// if run is not true then start screen is displayed
     textSize(15);
     background(galaxy);
     textSize(30);
@@ -55,7 +55,7 @@ void draw() {
   }
 
   if (run) {
-    //This is the actual cod for the game
+    //This is the actual code for the game
     background(world);
     stroke(155, 144, 144);//2 goals
     noFill();
@@ -74,8 +74,8 @@ void draw() {
         ellipse(x, y, d, d);
       }
     }
-    rect.display();
-    //particles
+    rect.display();//displays the rectangles for the border
+    //particles that add the effect on the mallets
     for (int i = 0; i < 5; i++) {
       particles.add(new Particle(m1.loc));
       particles.add(new Particle(m2.loc));
@@ -107,16 +107,16 @@ void draw() {
         threshold-=10;
         oldTime = millis();
       }
-      //      if (millis() == 1800) {
-      //        b1.display();
-      //        b1.reset();
-      //        b1.touch();
-      //      }
-      //      if (millis() == 3000) {
-      //        b1.display();
-      //        b1.reset();
-      //        b1.touch(p1);
-      //      }
+//            if (millis() == 1800) {
+//             b1.display();
+//              b1.reset();
+//             b1.touch();
+//            }
+//           if (millis() == 3000) {
+//              b1.display();
+//              b1.reset();
+//             b1.touch(p1);
+//           }
       //this displays the score
       textAlign(CENTER);
       textSize(30);
@@ -125,14 +125,14 @@ void draw() {
       text(score2, width*0.8, height/6);
     }
   }
-  if (instructions==true) {
+  if (instructions==true) {//if instructions is pressed then they are displayed 
     background(sky);
     fill(255);
     textSize(20);
     textAlign(CENTER);
     text(s, width/6, height/6, 500, 300);
   }
-  if (keyPressed) {
+  if (keyPressed) {//back button that returns to the start screen
     if (key == 'b') {
       run = false;
       instructions = false;
@@ -140,7 +140,7 @@ void draw() {
   }
 
 
-  if (score1 >= 10|| score2 >= 10) {
+  if (score1 >= 10|| score2 >= 10) {//game is over when score is  10
     gameOver = true;
   }
   if (gameOver == true) {
@@ -159,7 +159,7 @@ void draw() {
     textSize(25);
     text("END", width*3/4, (height*3/4)+10);
     //close the game
-    if (mousePressed == true) { 
+    if (mousePressed == true) { //if you press the mouse on the game over screen, game will close
       if (mouseX > (width*3/4)-50 && mouseX < (width*3/4)+50 && mouseY > (height*3/4)-50 && mouseY < (height*3/4)+50) { 
         exit();
       }
@@ -176,7 +176,7 @@ void mouseClicked() {
   if (mouseX<350 && mouseX>0 && mouseY<200 && mouseY>300) {
     run=false;
   }
-  if (mouseX>350 && mouseX<450 && mouseY>350 && mouseY<450) {
+  if (mouseX>350 && mouseX<450 && mouseY>350 && mouseY<450) {//click to read instructions
     instructions = true;
   }
   if (mouseX<350 && mouseX>450 && mouseY<350 && mouseY>450) {

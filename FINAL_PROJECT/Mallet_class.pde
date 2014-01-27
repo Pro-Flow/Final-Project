@@ -17,7 +17,7 @@ class Mallet {
     ellipse(loc.x, loc.y, d, d);
   }
 
-  void keyPressed() {
+  void keyPressed() {//use wasd keys to control the mallet on the left
     if (which == 0) {
       if (keyPressed) {
         loc.add(vel);
