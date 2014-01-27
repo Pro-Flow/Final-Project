@@ -1,8 +1,9 @@
 ArrayList <Particle> particles = new ArrayList<Particle>();
-puck p1;
-mallet m1;
-mallet m2;
-bonus b1;
+Puck p1;
+Mallet m1;
+Mallet m2;
+Bonus b1;
+Rectangle rect;
 float x=0;
 float y=0;
 float threshold = 3000;
@@ -11,10 +12,6 @@ boolean gameOver;
 boolean instructions;
 int score1;
 int score2;
-int vertwidth=15;
-int vertheight=150;
-int horiwidth=385;
-int horiheight=15;
 int oldTime = 0;
 int d = 2;
 PImage world;
@@ -25,11 +22,19 @@ String s = "Player 1 uses arrow keys to move mallet. Player 2 uses W,A,S,D keys 
 
 void setup () {
   size(800, 500);
+<<<<<<< HEAD
   p1 = new puck();
   m1 = new mallet(width/6, height*.5, 0);
   m2 = new mallet(width*5/6, height*.5, 1);
   b1 = new bonus();
   run = false;
+=======
+  p1 = new Puck();
+  m1 = new Mallet(width/6, height*.5, 0);
+  m2 = new Mallet(width*5/6, height*.5, 1);
+  b1 = new Bonus();
+  rect = new Rectangle();
+>>>>>>> 6407548e7ea3b99d9088c2c22d52512c7415fee6
   gameOver = false;
   instructions = false;
   score1 = 0;
@@ -41,7 +46,7 @@ void setup () {
 }
 
 void draw() {
-  if (!run) {
+  if (!run) {// if run is not true then start screen is displayed
     textSize(15);
     background(galaxy);
     textSize(30);
@@ -56,8 +61,13 @@ void draw() {
     fill(255);
     text("Instructions", 400, 400);
   }
+
   if (run) {
+<<<<<<< HEAD
     //This is the actual cod for the game
+=======
+    //This is the actual code for the game
+>>>>>>> 6407548e7ea3b99d9088c2c22d52512c7415fee6
     background(world);
     stroke(155, 144, 144);//2 goals
     noFill();
@@ -66,6 +76,8 @@ void draw() {
     strokeWeight(8);//center circle
     noFill();
     ellipse(width/2, height/2, 200, 200);
+    line(width/2, 10, width/2, 490);
+    stroke(255);
     noStroke();//little air holes
     fill(190);
     //This creates the dots for the air holes
@@ -74,6 +86,7 @@ void draw() {
         ellipse(x, y, d, d);
       }
     }
+<<<<<<< HEAD
     //decorative rectangles
     fill(255);
     strokeWeight(4);
@@ -101,6 +114,10 @@ void draw() {
     //particles
 >>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
     println(particles.size());
+=======
+    rect.display();//displays the rectangles for the border
+    //particles that add the effect on the mallets
+>>>>>>> 6407548e7ea3b99d9088c2c22d52512c7415fee6
     for (int i = 0; i < 5; i++) {
       particles.add(new Particle(m1.loc));
       particles.add(new Particle(m2.loc));
@@ -112,6 +129,7 @@ void draw() {
       if (p.life <= 0 ) {
         particles.remove(i);
       }
+<<<<<<< HEAD
 
       p1.reset();
       if (p1.loc.dist(m1.loc) < p1.d/2 + m1.d/2) {
@@ -129,10 +147,22 @@ void draw() {
 =======
       //calling functions
 >>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
+=======
+      p1.reset();
+      if (p1.loc.dist(m1.loc) < p1.d/2 + m1.d/2) {
+        m1.bounce();
+      }      
+      if (p1.loc.dist(m2.loc) < p1.d/2 + m2.d/2) {
+        m2.bounce();
+      }
+      stroke(255);
+      //calling functions
+>>>>>>> 6407548e7ea3b99d9088c2c22d52512c7415fee6
       p1.display();
       p1.update();
       m1.display();
       m1.wasd();
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       //    m1.bounce(p1);
@@ -150,11 +180,16 @@ void draw() {
 >>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
 =======
 >>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
+=======
+      m2.display();
+      m2.arrows();
+>>>>>>> 6407548e7ea3b99d9088c2c22d52512c7415fee6
       //adding time when bonus items come up (at 3 and 5 minutes)
       if (millis() - oldTime >= threshold) {
         threshold-=10;
         oldTime = millis();
       }
+<<<<<<< HEAD
       if (millis() == 180000) {
         b1.display();
         b1.reset();
@@ -174,6 +209,19 @@ void draw() {
 =======
 //this displays the score
 >>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
+=======
+//            if (millis() == 1800) {
+//             b1.display();
+//              b1.reset();
+//             b1.touch();
+//            }
+//           if (millis() == 3000) {
+//              b1.display();
+//              b1.reset();
+//             b1.touch(p1);
+//           }
+      //this displays the score
+>>>>>>> 6407548e7ea3b99d9088c2c22d52512c7415fee6
       textAlign(CENTER);
       textSize(30);
       fill(255);
@@ -181,13 +229,18 @@ void draw() {
       text(score2, width*0.8, height/6);
     }
   }
+<<<<<<< HEAD
   if (instructions==true) {
+=======
+  if (instructions==true) {//if instructions is pressed then they are displayed 
+>>>>>>> 6407548e7ea3b99d9088c2c22d52512c7415fee6
     background(sky);
     fill(255);
     textSize(20);
     textAlign(CENTER);
     text(s, width/6, height/6, 500, 300);
   }
+<<<<<<< HEAD
   if (keyPressed) {
     if (key == 'b') {
       run = false;
@@ -203,8 +256,17 @@ void draw() {
     }
   }
 
+=======
+  if (keyPressed) {//back button that returns to the start screen
+    if (key == 'b') {
+      run = false;
+      instructions = false;
+    }
+  }
+>>>>>>> 6407548e7ea3b99d9088c2c22d52512c7415fee6
 
-  if (score1 >= 10|| score2 >= 10) {
+
+  if (score1 >= 10|| score2 >= 10) {//game is over when score is  10
     gameOver = true;
   }
   if (gameOver == true) {
@@ -223,12 +285,13 @@ void draw() {
     textSize(25);
     text("END", width*3/4, (height*3/4)+10);
     //close the game
-    if (mousePressed == true) { 
+    if (mousePressed == true) { //if you press the mouse on the game over screen, game will close
       if (mouseX > (width*3/4)-50 && mouseX < (width*3/4)+50 && mouseY > (height*3/4)-50 && mouseY < (height*3/4)+50) { 
         exit();
       }
     }
   }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 }
@@ -264,18 +327,26 @@ void mouseClicked() {
       run = true;
     }
 >>>>>>> bead6a0401ffefd9c75f610db083033aebbf2b2d
+=======
+}
+
+void mouseClicked() {
+  if (mouseX>350 && mouseX<450 && mouseY>200 && mouseY<300) {//click to start game
+    if (!instructions) {
+      run = true;
+    }
+>>>>>>> 6407548e7ea3b99d9088c2c22d52512c7415fee6
   }
   if (mouseX<350 && mouseX>0 && mouseY<200 && mouseY>300) {
     run=false;
   }
-  if (mouseX>350 && mouseX<450 && mouseY>350 && mouseY<450) {
+  if (mouseX>350 && mouseX<450 && mouseY>350 && mouseY<450) {//click to read instructions
     instructions = true;
   }
   if (mouseX<350 && mouseX>450 && mouseY<350 && mouseY>450) {
     instructions = false;
   }
 }
-
 
 void keyPressed() {
   //Press p to end game
