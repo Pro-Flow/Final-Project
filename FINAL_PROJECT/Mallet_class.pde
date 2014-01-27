@@ -23,22 +23,22 @@ class Mallet {
       if (keyPressed) {
         if (key == 's') {
           loc.add(vel);
-          vel.y = .1;
+          vel.y = 10;
           vel.x = 0;
         }
         if (key == 'a') {
           loc.add(vel);
-          vel.x = -.1;
+          vel.x = -10;
           vel.y = 0;
         }
         if (key == 'w') {
           loc.add(vel);
-          vel.y = -.1;
+          vel.y = -10;
           vel.x = 0;
         }
         if (key =='d') {
           loc.add(vel);
-          vel.x = .1;
+          vel.x = 10;
           vel.y = 0;
         }
       }
@@ -51,22 +51,22 @@ class Mallet {
       if (keyPressed && key == CODED) {
         if (keyCode == LEFT) {
           loc.add(vel);
-          vel.x = -.1;
+          vel.x = -10;
           vel.y = 0;
         }
         if (keyCode == UP) {
           loc.add(vel);
-          vel.y = -.1;
+          vel.y = -10;
           vel.x = 0;
         }
         if (keyCode == RIGHT) {
           loc.add(vel);
-          vel.x = .1;
+          vel.x = 10;
           vel.y = 0;
         }
         if (keyCode == DOWN) {
           loc.add(vel);
-          vel.y = .1;
+          vel.y = 10;
           vel.x = 0;
         }
       }
@@ -94,7 +94,7 @@ class Mallet {
     PVector impulse = new PVector();
     float impactSpeed;
     impulse.set(ab);
-    impactSpeed = .01;
+    impactSpeed = .5;
     impulse.mult(sqrt(impactSpeed));
     p1.vel.add(impulse);
   }
