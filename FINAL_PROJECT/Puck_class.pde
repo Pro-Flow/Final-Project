@@ -8,7 +8,7 @@ class Puck {
   Puck () {
     loc = new PVector(width/2, height/2);
     vel = new PVector(0, 0);
-    d = 40;
+    d = 30;
     c = color(0);
   }
 

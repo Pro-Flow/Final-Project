@@ -7,7 +7,7 @@ class Mallet {
   Mallet (float x, float y, int wh) {
     loc = new PVector (x, y);
     vel = new PVector(0, 0);
-    d = 60;
+    d = 40;
     c = color(255, 0, 0);
     which = wh;
   }
@@ -21,20 +21,23 @@ class Mallet {
     //WASD keys control the mallet on the left
     if (which == 0) {
       if (keyPressed) {
-        loc.add(vel);
         if (key == 's') {
+          loc.add(vel);
           vel.y = .1;
           vel.x = 0;
         }
         if (key == 'a') {
+          loc.add(vel);
           vel.x = -.1;
           vel.y = 0;
         }
         if (key == 'w') {
+          loc.add(vel);
           vel.y = -.1;
           vel.x = 0;
         }
         if (key =='d') {
+          loc.add(vel);
           vel.x = .1;
           vel.y = 0;
         }
@@ -46,20 +49,23 @@ class Mallet {
     //Arrow Key movement
     if (which == 1) {
       if (keyPressed && key == CODED) {
-        loc.add(vel);
         if (keyCode == LEFT) {
+          loc.add(vel);
           vel.x = -.1;
           vel.y = 0;
         }
         if (keyCode == UP) {
+          loc.add(vel);
           vel.y = -.1;
           vel.x = 0;
         }
         if (keyCode == RIGHT) {
+          loc.add(vel);
           vel.x = .1;
           vel.y = 0;
         }
         if (keyCode == DOWN) {
+          loc.add(vel);
           vel.y = .1;
           vel.x = 0;
         }
