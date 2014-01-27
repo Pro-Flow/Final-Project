@@ -155,12 +155,10 @@ if (gameOver == true) {
   background(0);  
   fill(255); 
   textSize(75);
-  textAlign(CENTER);
-  text("GAME OVER", width/2, height/4);
+  text("GAME OVER", width/2, height/6);
   //game over button
-  rectMode(CENTER);
   fill(17, 4, 142); 
-  rect(width*3/4, height*3/4, 100, 100, 30); 
+  rect(width-250, height*2/3, 100, 100, 30); 
   //game over button text
   fill(255);
   textSize(25);
