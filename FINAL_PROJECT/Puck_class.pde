@@ -18,7 +18,7 @@ class Puck {
   }
 
   void update() {
-    //makes puck bounce
+    //makes puck bounce off of walls
     if (loc.x + d/2 > width - 32) {
       if (loc.y - d/2 < 184 || loc.y + d/2 > 316) {
         vel.x = -abs(vel.x);
@@ -41,8 +41,8 @@ class Puck {
 
 
   void reset() {
-    //Resets puck to the middle of table if it goes through one
-    //the holes
+    /*Resets puck to the middle of table if it goes through one
+    the holes*/
     //Left Hole
     if (loc.x - d/2 > width) {
       loc.x = width/2;

@@ -38,18 +38,21 @@ void setup () {
 }
 
 void draw() {
-  if (!run) {// if run is not true then start screen is displayed
+  // if run is not true then start screen is displayed
+  if (!run) {
     textSize(15);
     background(galaxy);
     textSize(30);
     text("Welcome to Astro Hockey!", width/2, height/5);
     textSize(15);
+    // start button
     fill(17, 4, 142);
-    rect(350, 200, 100, 100, 30); // start button
+    rect(350, 200, 100, 100, 30); 
     fill(255);
     text("Start", 400, 250); 
+    //instructions button
     fill(17, 4, 142);
-    rect(350, 350, 100, 100, 30); //instructions button
+    rect(350, 350, 100, 100, 30); 
     fill(255);
     text("Instructions", 400, 400);
   }
@@ -126,22 +129,24 @@ void draw() {
       text(score2, width*0.8, height/6);
     }
   }
-  if (instructions==true) {//if instructions is pressed then they are displayed 
+  //if instructions button is pressed then they are displayed 
+  if (instructions==true) {
     background(sky);
     fill(255);
     textSize(20);
     textAlign(CENTER);
     text(s, width/6, height/6, 500, 300);
   }
-  if (keyPressed) {//back button that returns to the start screen
+  //back button that returns to the start screen
+  if (keyPressed) {
     if (key == 'b') {
       run = false;
       instructions = false;
     }
   }
 
-
-  if (score1 >= 10|| score2 >= 10) {//game is over when score is  10
+//game is over when score is  10
+  if (score1 >= 10|| score2 >= 10) {
     gameOver = true;
   }
   if (gameOver == true) {
@@ -160,7 +165,8 @@ void draw() {
     textSize(25);
     text("END", width*3/4, (height*3/4)+10);
     //close the game
-    if (mousePressed == true) { //if you press the mouse on the game over screen, game will close
+    //if you press the mouse on the game over screen, game will close
+    if (mousePressed == true) { 
       if (mouseX > (width*3/4)-50 && mouseX < (width*3/4)+50 && mouseY > (height*3/4)-50 && mouseY < (height*3/4)+50) { 
         exit();
       }
@@ -169,7 +175,9 @@ void draw() {
 }
 
 void mouseClicked() {
-  if (mouseX>350 && mouseX<450 && mouseY>200 && mouseY<300) {//click to start game
+  //These are the buttons on the start screen
+  if (mouseX>350 && mouseX<450 && mouseY>200 && mouseY<300) {
+    //click to start game
     if (!instructions) {
       run = true;
     }
@@ -177,7 +185,8 @@ void mouseClicked() {
   if (mouseX<350 && mouseX>0 && mouseY<200 && mouseY>300) {
     run=false;
   }
-  if (mouseX>350 && mouseX<450 && mouseY>350 && mouseY<450) {//click to read instructions
+  if (mouseX>350 && mouseX<450 && mouseY>350 && mouseY<450) {
+    //click to read instructions
     instructions = true;
   }
   if (mouseX<350 && mouseX>450 && mouseY<350 && mouseY>450) {

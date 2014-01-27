@@ -17,7 +17,8 @@ class Mallet {
     ellipse(loc.x, loc.y, d, d);
   }
 
-  void keyPressed() {//use wasd keys to control the mallet on the left
+  void keyPressed() {
+    //WASD keys control the mallet on the left
     if (which == 0) {
       if (keyPressed) {
         loc.add(vel);
@@ -42,7 +43,7 @@ class Mallet {
   }
 
   void arrows() {
-    //WASD & Arrow Key movement
+    //Arrow Key movement
     if (which == 1) {
       if (keyPressed && key == CODED) {
         loc.add(vel);

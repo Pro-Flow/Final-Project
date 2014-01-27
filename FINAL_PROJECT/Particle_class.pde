@@ -12,6 +12,7 @@ class Particle {
   }
 
   void display () {
+    //displays particles
     fill(237, 231, 250, life);
     noStroke();
     ellipse(loc.x, loc.y, d, d);
