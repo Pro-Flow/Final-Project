@@ -1,13 +1,13 @@
-class mallet {
+class Mallet {
   PVector loc, vel;
   float d;
   color c;
   int which;
 
-  mallet (float x, float y, int wh) {
+  Mallet (float x, float y, int wh) {
     loc = new PVector (x, y);
-    vel = new PVector(0,0);
-    d = 30;
+    vel = new PVector(0, 0);
+    d = 60;
     c = color(255, 0, 0);
     which = wh;
   }
@@ -20,34 +20,22 @@ class mallet {
   void keyPressed() {
     if (which == 0) {
       if (keyPressed) {
+        loc.add(vel);
         if (key == 's') {
-          loc.y+=5;
+          vel.y = .1;
+          vel.x = 0;
         }
         if (key == 'a') {
-          loc.x-=5;
+          vel.x = -.1;
+          vel.y = 0;
         }
         if (key == 'w') {
-          loc.y-=5;
+          vel.y = -.1;
+          vel.x = 0;
         }
         if (key =='d') {
-          loc.x+=5;
-        }
-
-        if (key == 'w' && key == 'a') {
-          loc.x-=5;
-          loc.y+=5;
-        }
-        if (key == 'w' && key == 'd') {
-          loc.x+=5;
-          loc.y+=5;
-        }
-        if (key == 's' && key == 'a') {
-          loc.x-=5;
-          loc.y-=5;
-        }
-        if (key == 's' && key == 'd') {
-          loc.x+=5; 
-          loc.y-=5;
+          vel.x = .1;
+          vel.y = 0;
         }
       }
     }
@@ -57,38 +45,26 @@ class mallet {
     //WASD & Arrow Key movement
     if (which == 1) {
       if (keyPressed && key == CODED) {
+        loc.add(vel);
         if (keyCode == LEFT) {
-          loc.x-=5;
+          vel.x = -.1;
+          vel.y = 0;
         }
         if (keyCode == UP) {
-          loc.y-=5;
+          vel.y = -.1;
+          vel.x = 0;
         }
         if (keyCode == RIGHT) {
-          loc.x+=5;
+          vel.x = .1;
+          vel.y = 0;
         }
         if (keyCode == DOWN) {
-          loc.y+=5;
-        }
-        if (keyCode == LEFT && keyCode == UP) {
-          loc.x-=5;
-          loc.y-=5;
-        }
-        if (keyCode == RIGHT && keyCode == UP) {
-          loc.x+=5;
-          loc.y-=5;
-        }
-        if (keyCode == DOWN && keyCode == LEFT) {
-          loc.x-=5;
-          loc.y+=5;
-        }
-        if (keyCode == DOWN && keyCode == RIGHT) {
-          loc.x+=5;
-          loc.y+=5;
+          vel.y = .1;
+          vel.x = 0;
         }
       }
     }
   }
-
 
   void wasd() {
     keyPressed();
@@ -99,7 +75,7 @@ class mallet {
     arrows();
   }
 
-  void bounce(puck p1) {
+  void bounce() {
     //This funtion helps with the bouncing motion  of the puck
     PVector ab = new PVector();
     ab.set(p1.loc);
@@ -109,9 +85,10 @@ class mallet {
       p1.loc.add(ab);
     }
     PVector impulse = new PVector();
-    float impactSpeed = 0.01;
+    float impactSpeed;
     impulse.set(ab);
-    impulse.mult(impactSpeed);
+    impactSpeed = .01;
+    impulse.mult(sqrt(impactSpeed));
     p1.vel.add(impulse);
   }
 }

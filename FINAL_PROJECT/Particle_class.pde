@@ -1,5 +1,4 @@
 class Particle {
-
   PVector loc, acc, vel;
   int d;
   int life;
