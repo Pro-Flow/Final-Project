@@ -112,16 +112,16 @@ void draw() {
       oldTime = millis();
     }
 
-    //            if (millis() == 1800) {
-    //             b1.display();
-    //              b1.reset();
-    //             b1.touch();
-    //            }
-    //           if (millis() == 3000) {
-    //              b1.display();
-    //              b1.reset();
-    //             b1.touch(p1);
-    //           }
+    if (millis() == 1800) {
+      b1.display();
+      b1.reset();
+      b1.touch(p1);
+    }
+    if (millis() == 3000) {
+      b1.display();
+      b1.reset();
+      b1.touch(p1);
+    }
     //this displays the score
     textAlign(CENTER);
     textSize(30);
@@ -130,47 +130,51 @@ void draw() {
     text(score2, width*0.8, height/6);
   }
 
-//if instructions button is pressed then they are displayed 
-if (instructions==true) {
-  background(sky);
-  fill(255);
-  textSize(20);
-  textAlign(CENTER);
-  text(s, width/6, height/6, 500, 300);
-}
-//back button that returns to the start screen
-if (keyPressed) {
-  if (key == 'b') {
-    run = false;
-    instructions = false;
+  //if instructions button is pressed then they are displayed 
+  if (instructions==true) {
+    background(sky);
+    fill(255);
+    textSize(20);
+    textAlign(CENTER);
+    text(s, width/6, height/6, 500, 300);
   }
-}
-
-//game is over when score is  10
-if (score1 >= 10|| score2 >= 10) {
-  gameOver = true;
-}
-if (gameOver == true) {
-  //displays game over screen with exit button
-  background(0);  
-  fill(255); 
-  textSize(75);
-  text("GAME OVER", width/2, height/6);
-  //game over button
-  fill(17, 4, 142); 
-  rect(width-250, height*2/3, 100, 100, 30); 
-  //game over button text
-  fill(255);
-  textSize(25);
-  text("END", width*3/4, (height*3/4)+10);
-  //close the game
-  //if you press the mouse on the game over screen, game will close
-  if (mousePressed == true) { 
-    if (mouseX > (width*3/4)-50 && mouseX < (width*3/4)+50 && mouseY > (height*3/4)-50 && mouseY < (height*3/4)+50) { 
-      exit();
+  //back button that returns to the start screen
+  if (keyPressed) {
+    if (key == 'b') {
+      run = false;
+      instructions = false;
     }
   }
-}
+
+  //game is over when score is  10
+  if (score1 >= 10|| score2 >= 10) {
+    gameOver = true;
+  }
+  if (gameOver == true) {
+    //displays game over screen with exit button
+    background(0);  
+    fill(255); 
+    textSize(75);
+    text("GAME OVER", width/2, height/6);
+    //game over button
+    fill(17, 4, 142); 
+    rect(width-250, height*2/3, 100, 100, 30); 
+    //game over button text
+    fill(255);
+    textSize(25);
+    text("END", width*3/4, (height*3/4)+10);
+    for (int i = 0; i < width; i+=10) {
+      ellipse(i*5, height/2, 40, 40);
+      i++;
+    }
+    //close the game
+    //if you press the mouse on the game over screen, game will close
+    if (mousePressed == true) { 
+      if (mouseX > (width*3/4)-50 && mouseX < (width*3/4)+50 && mouseY > (height*3/4)-50 && mouseY < (height*3/4)+50) { 
+        exit();
+      }
+    }
+  }
 }
 
 void mouseClicked() {

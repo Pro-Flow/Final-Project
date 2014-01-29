@@ -22,7 +22,7 @@ class Bonus {
     loc.y = 1000;
   }
 
-  void touch() {
+  void touch(Puck p1) {
     if (loc.dist(p1.loc) < d/2+p1.d/2) {
       reset();
       score1=score1+2;
