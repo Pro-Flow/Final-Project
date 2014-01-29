@@ -1,4 +1,4 @@
-class Rectangle  {
+ class Rectangle  {
   int vertwidth;
   int vertheight;
   int horiwidth;

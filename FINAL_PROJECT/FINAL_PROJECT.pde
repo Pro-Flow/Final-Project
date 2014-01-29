@@ -5,12 +5,15 @@ Mallet m1;
 Mallet m2;
 //Bonus b1;
 Rectangle rect;
+GameOver g;
+Restart r;
 float x=0;
 float y=0;
 float threshold = 3000;
 boolean run;
 boolean gameOver;
 boolean instructions;
+
 int score1;
 int score2;
 int oldTime = 0;
@@ -28,9 +31,16 @@ void setup () {
   p1 = new Puck();
   m1 = new Mallet(width/6, height*.5, 0);
   m2 = new Mallet(width*5/6, height*.5, 1);
+<<<<<<< HEAD
+=======
+  b1 = new Bonus();
+  g = new GameOver();
+  r = new Restart();
+>>>>>>> restart class and game over class
   rect = new Rectangle();
   gameOver = false;
   instructions = false;
+
   score1 = 0;
   score2 = 0;
   world = loadImage("earthlights.jpg");
@@ -115,10 +125,20 @@ void draw() {
     if (millis() - oldTime >= threshold) {
       threshold-=10;
       oldTime = millis();
+<<<<<<< HEAD
       if (score1 > 1 || score2 > 1) {
         bonus.add(new Bonus());
         println("ADD!!!");
       }
+=======
+      b1.display();
+      b1.reset();
+      b1.touch(p1);
+    }
+
+    if (score1 >= 5 || score2 >= 5) {
+      threshold = 2000;
+>>>>>>> restart class and game over class
     }
     for (int i = bonus.size()-1; i >= 0; i--) {
       Bonus b = bonus.get(i);
@@ -168,6 +188,7 @@ void draw() {
   if (score1 >= 10|| score2 >= 10) {
     gameOver = true;
   }
+<<<<<<< HEAD
   if (gameOver == true) {
     //displays game over screen with exit button
     background(earth);
@@ -202,8 +223,20 @@ void draw() {
         exit();
       }
     }
+=======
+  
+ if (gameOver == true) {
+    g.alien();
+    g.overButton();
+    r.display();
+    r.clickRestart();
+>>>>>>> restart class and game over class
   }
+
+   
 }
+
+
 
 void mouseClicked() {
   //These are the buttons on the start screen
@@ -223,12 +256,15 @@ void mouseClicked() {
   if (mouseX<350 && mouseX>450 && mouseY<350 && mouseY>450) {
     instructions = false;
   }
-}
+  
+    }
+ 
 
-void keyPressed() {
-  //Press p to end game
-  if (key == 'p') {
-    gameOver = !gameOver;
-  }
-}
+
+    void keyPressed() {
+      //Press p to end game
+      if (key == 'p') {
+        gameOver = !gameOver;
+      }
+    }
 
