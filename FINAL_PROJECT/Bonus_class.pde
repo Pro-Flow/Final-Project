@@ -2,31 +2,39 @@ class Bonus {
   PVector loc;
   float d;
   color c;
+  int life;
 
   Bonus () {
     loc = new PVector(random(width), random(height));
     d = 40;
     c = color(255, 0, 0);
+    life = 500;
   }
 
   void display() {
-    if (score1 >= 5 || score2 >= 5) {
-      fill(c);
-      ellipse(loc.x, loc.y, d, d);
-      text("BONUS", loc.x, loc.y);
+println("i exist");
+    fill(c);
+    ellipse(loc.x, loc.y, d, d);
+    text("BONUS", loc.x, loc.y);
+  }
+
+  //  void reset() {
+  //    loc.x = 1000;
+  //    loc.y = 1000;
+  //  }
+  
+  void update(){
+    
+   life--; 
+  }
+
+  boolean touch(Mallet m) {
+    if (loc.dist(m.loc) < d/2+m.d/2) {
+      return true;
     }
-  }
-
-  void reset() {
-    loc.x = 1000;
-    loc.y = 1000;
-  }
-
-  void touch(Puck p1) {
-    if (loc.dist(p1.loc) < d/2+p1.d/2) {
-      reset();
-      score1=score1+2;
-      score2=score2+2;
+    else {
+      return false;
     }
   }
 }
+
