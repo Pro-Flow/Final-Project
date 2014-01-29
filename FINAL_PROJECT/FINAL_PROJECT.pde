@@ -18,6 +18,7 @@ PImage world;
 PImage galaxy;
 PImage sky;
 PImage alien1;
+PImage earth;
 //The text for the instruction screen is below
 String s = "Player 1 uses arrow keys to move mallet. Player 2 uses W,A,S,D keys to move other mallet. Push the puck into the opposite goal, while guarding the goal on your side. The first player to reach 10 points wins. Press p to end the game. Press b to go back to the start screen.";
 
@@ -36,6 +37,7 @@ void setup () {
   galaxy = loadImage("space.jpg");
   sky = loadImage("starrysky.jpg");
   alien1 = loadImage("SpaceInvaders1.jpg");
+  earth = loadImage("earth.jpg");
   textAlign(CENTER);
 }
 
@@ -153,7 +155,7 @@ void draw() {
   }
   if (gameOver == true) {
     //displays game over screen with exit button
-    background(0);
+    background(earth);
     image(alien1,x+50, height/3.5, 200, 200);
       x+=2;
       if(x+100 >= width){
