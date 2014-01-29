@@ -5,7 +5,7 @@ class Bonus {
 
   Bonus () {
     loc = new PVector(random(width), random(height));
-    d = 20;
+    d = 40;
     c = color(255, 0, 0);
   }
 

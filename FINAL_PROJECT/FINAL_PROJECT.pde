@@ -112,17 +112,16 @@ void draw() {
     if (millis() - oldTime >= threshold) {
       threshold-=10;
       oldTime = millis();
+      b1.display();
+      b1.reset();
+      b1.touch(p1);
     }
 
-    if (millis() == 1800) {
-      b1.display();
-      b1.reset();
-      b1.touch(p1);
+    if (score1 >= 5 || score2 >= 5) {
+     threshold = 2000;
     }
-    if (millis() == 3000) {
-      b1.display();
-      b1.reset();
-      b1.touch(p1);
+    if (score1 >= 7 || score2 >= 7) {
+      threshold = 1000;
     }
     //this displays the score
     textAlign(CENTER);
