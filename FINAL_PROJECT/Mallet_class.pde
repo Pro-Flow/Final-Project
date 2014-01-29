@@ -22,25 +22,33 @@ class Mallet {
     if (which == 0) {
       if (keyPressed) {
         if (key == 's') {
+          if(loc.y + d/2 < height-40){
           loc.add(vel);
           vel.y = 6;
           vel.x = 0;
         }
+        }
         if (key == 'a') {
+          if(loc.x - d/2 > 40){
           loc.add(vel);
           vel.x = -6;
           vel.y = 0;
         }
+        }
         if (key == 'w') {
+          if(loc.y - d/2 > 40){
           loc.add(vel);
           vel.y = -6;
           vel.x = 0;
         }
+        }
         if (key =='d') {
+          if(loc.x + d/2 < width -40){
           loc.add(vel);
           vel.x = 6;
           vel.y = 0;
         }
+      }
       }
     }
   }
@@ -50,24 +58,32 @@ class Mallet {
     if (which == 1) {
       if (keyPressed && key == CODED) {
         if (keyCode == LEFT) {
+          if(loc.x-d/2 > 40){
           loc.add(vel);
           vel.x = -6;
           vel.y = 0;
         }
+        }
         if (keyCode == UP) {
+          if(loc.y-d/2 > 40){
           loc.add(vel);
           vel.y = -6;
           vel.x = 0;
         }
+        }
         if (keyCode == RIGHT) {
+          if(loc.x+d/2 < width - 40){
           loc.add(vel);
           vel.x = 6;
           vel.y = 0;
         }
+        }
         if (keyCode == DOWN) {
+          if(loc.y+d/2 < height - 40){
           loc.add(vel);
           vel.y = 6;
           vel.x = 0;
+        }
         }
       }
     }
