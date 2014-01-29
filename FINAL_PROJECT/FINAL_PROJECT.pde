@@ -17,6 +17,7 @@ int d = 2;
 PImage world;
 PImage galaxy;
 PImage sky;
+PImage alien1;
 //The text for the instruction screen is below
 String s = "Player 1 uses arrow keys to move mallet. Player 2 uses W,A,S,D keys to move other mallet. Push the puck into the opposite goal, while guarding the goal on your side. The first player to reach 10 points wins. Press p to end the game. Press b to go back to the start screen.";
 
@@ -34,6 +35,7 @@ void setup () {
   world = loadImage("earthlights.jpg");
   galaxy = loadImage("space.jpg");
   sky = loadImage("starrysky.jpg");
+  alien1 = loadImage("SpaceInvaders1.jpg");
   textAlign(CENTER);
 }
 
@@ -152,7 +154,20 @@ void draw() {
   }
   if (gameOver == true) {
     //displays game over screen with exit button
-    background(0);  
+    background(0);
+    image(alien1,x+50, height/3.5, 200, 200);
+      x+=2;
+      if(x+100 >= width){
+        x = -100;
+      }
+      for(int i = 0; i < width; i+=5){
+      image(alien1, i*20, height/4, 50, 50);
+      i+=0.5;
+      }
+      for(int i = 0; i< width; i+=5){
+      image(alien1, i*20, height/1.6, 50, 50);
+      i+=0.5;
+      }
     fill(255); 
     textSize(75);
     text("GAME OVER", width/2, height/6);
@@ -163,10 +178,7 @@ void draw() {
     fill(255);
     textSize(25);
     text("END", width*3/4, (height*3/4)+10);
-    for (int i = 0; i < width; i+=10) {
-      ellipse(i*5, height/2, 40, 40);
-      i++;
-    }
+      
     //close the game
     //if you press the mouse on the game over screen, game will close
     if (mousePressed == true) { 
