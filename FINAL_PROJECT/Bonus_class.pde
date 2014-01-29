@@ -5,24 +5,19 @@ class Bonus {
   int life;
 
   Bonus () {
-    loc = new PVector(random(width), random(height));
-    d = 40;
-    c = color(255, 0, 0);
-    life = 500;
+    loc = new PVector(random(50,750), random(50,450));
+    d = 30;
+    c = color(0, 0, 255);
+    life = 200;
   }
 
   void display() {
-println("i exist");
     fill(c);
     ellipse(loc.x, loc.y, d, d);
+    textSize(10);
     text("BONUS", loc.x, loc.y);
   }
 
-  //  void reset() {
-  //    loc.x = 1000;
-  //    loc.y = 1000;
-  //  }
-  
   void update(){
     
    life--; 

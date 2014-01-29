@@ -9,11 +9,10 @@ GameOver g;
 Restart r;
 float x=0;
 float y=0;
-float threshold = 3000;
+float threshold = 15000;
 boolean run;
 boolean gameOver;
 boolean instructions;
-
 int score1;
 int score2;
 int oldTime = 0;
@@ -31,12 +30,8 @@ void setup () {
   p1 = new Puck();
   m1 = new Mallet(width/6, height*.5, 0);
   m2 = new Mallet(width*5/6, height*.5, 1);
-<<<<<<< HEAD
-=======
-  b1 = new Bonus();
   g = new GameOver();
   r = new Restart();
->>>>>>> restart class and game over class
   rect = new Rectangle();
   gameOver = false;
   instructions = false;
@@ -125,20 +120,9 @@ void draw() {
     if (millis() - oldTime >= threshold) {
       threshold-=10;
       oldTime = millis();
-<<<<<<< HEAD
-      if (score1 > 1 || score2 > 1) {
+      if (score1 > 5 || score2 > 5) {
         bonus.add(new Bonus());
-        println("ADD!!!");
       }
-=======
-      b1.display();
-      b1.reset();
-      b1.touch(p1);
-    }
-
-    if (score1 >= 5 || score2 >= 5) {
-      threshold = 2000;
->>>>>>> restart class and game over class
     }
     for (int i = bonus.size()-1; i >= 0; i--) {
       Bonus b = bonus.get(i);
@@ -154,12 +138,6 @@ void draw() {
         bonus.remove(i);
       }
     }
-    //    if (score1 >= 5 || score2 >= 5) {
-    //      threshold = 2000;
-    //    }
-    //    if (score1 >= 7 || score2 >= 7) {
-    //      threshold = 1000;
-    //    }
     //this displays the score
     textAlign(CENTER);
     textSize(30);
@@ -185,52 +163,15 @@ void draw() {
   }
 
   //game is over when score is  10
-  if (score1 >= 10|| score2 >= 10) {
+  if (score1 >= 15|| score2 >= 15) {
     gameOver = true;
   }
-<<<<<<< HEAD
-  if (gameOver == true) {
-    //displays game over screen with exit button
-    background(earth);
-    image(alien1, x+50, height/3.5, 200, 200);
-    x+=2;
-    if (x+100 >= width) {
-      x = -100;
-    }
-    for (int i = 0; i < width; i+=5) {
-      image(alien1, i*20, height/4, 50, 50);
-      i+=0.5;
-    }
-    for (int i = 0; i< width; i+=5) {
-      image(alien1, i*20, height/1.6, 50, 50);
-      i+=0.5;
-    }
-    fill(255); 
-    textSize(75);
-    text("GAME OVER", width/2, height/6);
-    //game over button
-    fill(17, 4, 142); 
-    rect(width-250, height*2/3, 100, 100, 30); 
-    //game over button text
-    fill(255);
-    textSize(25);
-    text("END", width*3/4, (height*3/4)+10);
-
-    //close the game
-    //if you press the mouse on the game over screen, game will close
-    if (mousePressed == true) { 
-      if (mouseX > (width*3/4)-50 && mouseX < (width*3/4)+50 && mouseY > (height*3/4)-50 && mouseY < (height*3/4)+50) { 
-        exit();
-      }
-    }
-=======
   
  if (gameOver == true) {
     g.alien();
     g.overButton();
     r.display();
     r.clickRestart();
->>>>>>> restart class and game over class
   }
 
    

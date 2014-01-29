@@ -8,7 +8,7 @@ class GameOver {
   }
   void alien() {
     //displays game over screen with exit button
-    background(0);
+    background(earth);
     image(alien1, x+50, height/3.5, 200, 200);
     x+=2;
     if (x+100 >= width) {
