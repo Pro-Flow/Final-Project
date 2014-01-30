@@ -13,6 +13,7 @@ class Mallet {
   }
 
   void display() {
+    //Shows the mallet
     fill(c);
     ellipse(loc.x, loc.y, d, d);
   }
@@ -99,7 +100,8 @@ class Mallet {
   }
 
   void bounce() {
-    //This funtion helps with the bouncing motion  of the puck
+    /*This funtion helps with the bouncing motion  of the puck
+    essentially the physics of it*/
     PVector ab = new PVector();
     ab.set(p1.loc);
     ab.sub(loc);

@@ -102,6 +102,7 @@ void draw() {
       }
     }
     p1.reset();
+    //this is so that the puck bounces off the individual mallets
     if (p1.loc.dist(m1.loc) < p1.d/2 + m1.d/2) {
       m1.bounce();
     }      
@@ -116,7 +117,7 @@ void draw() {
     m1.wasd();
     m2.display();
     m2.arrows();
-    //adding time when bonus items come up (at 3 and 5 minutes)
+    //adding time when bonus items come up (at 20 seconds after a score passes 5)
     if (millis() - oldTime >= threshold) {
       threshold-=10;
       oldTime = millis();
@@ -146,7 +147,7 @@ void draw() {
     text(score2, width*0.8, height/6);
   }
 
-  //if instructions button is pressed then they are displayed 
+  //if instructions button is pressed then it is displayed 
   if (instructions==true) {
     background(sky);
     fill(255);
@@ -162,7 +163,7 @@ void draw() {
     }
   }
 
-  //game is over when score is  10
+  //game is over when score is  15
   if (score1 >= 15|| score2 >= 15) {
     gameOver = true;
   }
@@ -172,9 +173,10 @@ void draw() {
     g.overButton();
     r.display();
     r.clickRestart();
-  }
-
-   
+    p1 = new Puck();
+    m1 = new Mallet(width/6, height*0.5, 0);
+    m2 = new Mallet(width*5/6, height*0.5, 1);
+  }  
 }
 
 
@@ -183,9 +185,7 @@ void mouseClicked() {
   //These are the buttons on the start screen
   if (mouseX>350 && mouseX<450 && mouseY>200 && mouseY<300) {
     //click to start game
-    if (!instructions) {
       run = true;
-    }
   }
   if (mouseX<350 && mouseX>0 && mouseY<200 && mouseY>300) {
     run=false;

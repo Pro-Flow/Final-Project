@@ -27,6 +27,8 @@ class GameOver {
 
 
   void overButton() {
+      //close the game
+    //if you press the mouse on the game over screen, game will close
     fill(255); 
     textSize(75);
     text("GAME OVER", width/2, height/6);
@@ -37,9 +39,6 @@ class GameOver {
     fill(255);
     textSize(20);
     text("END", width/1.34, height/1.15);
-
-    //close the game
-    //if you press the mouse on the game over screen, game will close
     if (mousePressed == true) { 
       if (mouseX > (width*3/4)-50 && mouseX < (width*3/4)+50 && mouseY > (height*3/4)-50 && mouseY < (height*3/4)+50) { 
         exit();

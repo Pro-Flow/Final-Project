@@ -12,18 +12,20 @@ class Bonus {
   }
 
   void display() {
+    
     fill(c);
     ellipse(loc.x, loc.y, d, d);
-    textSize(10);
-    text("BONUS", loc.x, loc.y);
   }
 
   void update(){
+    /*This is so that after a short period of time, the bonus
+    item goes away*/
     
    life--; 
   }
 
   boolean touch(Mallet m) {
+    //This is to make sure that the mallet is touching the item
     if (loc.dist(m.loc) < d/2+m.d/2) {
       return true;
     }
