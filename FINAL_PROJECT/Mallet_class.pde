@@ -55,7 +55,7 @@ class Mallet {
   }
 
   void arrows() {
-    //Arrow Key movement
+    //Arrow Key movement. controls the mallet on the right
     if (which == 1) {
       if (keyPressed && key == CODED) {
         if (keyCode == LEFT) {

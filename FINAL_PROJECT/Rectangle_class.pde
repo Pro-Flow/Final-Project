@@ -12,6 +12,7 @@
   }
 
   void display() {
+    //rectangular borders for the background
     fill(255);
     strokeWeight(4);
     stroke(238, 242, 51); //yellow rectangle

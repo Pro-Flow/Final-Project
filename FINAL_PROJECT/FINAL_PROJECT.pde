@@ -124,6 +124,7 @@ void draw() {
         bonus.add(new Bonus());
       }
     }
+    //score increases by 2 if the mallets hit the bonus and goes away after mallet hits it
     for (int i = bonus.size()-1; i >= 0; i--) {
       Bonus b = bonus.get(i);
       b.display();
@@ -131,8 +132,8 @@ void draw() {
       if (b.life <= 0) {
         bonus.remove(i);
       }
-      else if (b.touch(m1)) {
-        score1+=2l;
+      else if (b.touch(m1)) { 
+        score1+=2;
         bonus.remove(i);
       }
       else if (b.touch(m2)) {
@@ -170,6 +171,7 @@ void draw() {
   }
 
   if (gameOver == true) {
+    //if game is over the following is displayed with the end and restart buttons. puck and mallets are resetted.
     g.alien();
     g.overButton();
     r.display();
@@ -200,7 +202,7 @@ void mouseClicked() {
 }
 
 void keyPressed() {
-  //Press p to end game
+  //Press p to end or pause game
   if (key == 'p') {
     gameOver = !gameOver;
   }

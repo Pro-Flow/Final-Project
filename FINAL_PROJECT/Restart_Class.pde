@@ -7,6 +7,7 @@ class Restart {
   }
   
   void display() {
+    //displays the restart button
     fill(17, 4, 142); 
     rect(width/1.2, height/1.3, w, h, 30);
     fill(255);
