@@ -3,18 +3,18 @@ class Bonus {
   float d;
   color c;
   int life;
+  PImage money;
 
   Bonus () {
     loc = new PVector(random(50,750), random(50,450));
     d = 30;
     c = color(0, 0, 255);
     life = 200;
+    money = loadImage("money.jpg");
   }
 
   void display() {
-    
-    fill(c);
-    ellipse(loc.x, loc.y, d, d);
+    image(money, loc.x, loc.y, d, d);
   }
 
   void update(){
