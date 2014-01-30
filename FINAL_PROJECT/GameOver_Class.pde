@@ -2,10 +2,10 @@ class GameOver {
   int w, h;
 
   GameOver() {
-
     w=100;
     h=100;
   }
+  
   void alien() {
     //displays game over screen with exit button
     background(earth);
@@ -23,8 +23,6 @@ class GameOver {
       i+=0.5;
     }
   }
-
-
 
   void overButton() {
       //close the game

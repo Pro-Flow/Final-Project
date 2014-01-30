@@ -17,6 +17,7 @@ class Particle {
     noStroke();
     ellipse(loc.x, loc.y, d, d);
   }
+  
 //particles fall and fade out
   void update() {
     loc.add(vel);

@@ -1,5 +1,4 @@
 class Puck {
-
   PVector loc;
   PVector vel;
   float d;
@@ -19,30 +18,28 @@ class Puck {
 
   void update() {
     //makes puck bounce off of walls
-    if (loc.x + d/2 > width - 32) {
-      if (loc.y - d/2 < 184 || loc.y + d/2 > 316) {
+    if (loc.x + d/2 > width - 34) {
+      if (loc.y - d/2 < 180 || loc.y + d/2 > 320) {
         vel.x = -abs(vel.x);
       }
     }
-    if (loc.x - d/2 < 32) {
-      if (loc.y - d/2 < 184 || loc.y + d/2 > 316) {
+    if (loc.x - d/2 < 34) {
+      if (loc.y - d/2 < 180 || loc.y + d/2 > 320) {
         vel.x = abs(vel.x);
       }
     }
-    if (loc.y + d/2 > height -32) {
+    if (loc.y + d/2 > height -34) {
       vel.y = -abs(vel.y);
     }
-    if (loc.y - d/2 < 32) {
+    if (loc.y - d/2 < 34) {
       vel.y = abs(vel.y);
     }
     loc.add(vel);
   }
 
-
-
   void reset() {
     /*Resets puck to the middle of table if it goes through one
-    the holes*/
+     the holes*/
     //Left Hole
     if (loc.x - d/2 > width) {
       loc.x = width/2;

@@ -2,10 +2,10 @@ class Restart {
   int w, h;
 
   Restart () {
-
     w=100;
     h=100;
   }
+  
   void display() {
     fill(17, 4, 142); 
     rect(width/1.2, height/1.3, w, h, 30);

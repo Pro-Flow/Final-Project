@@ -6,7 +6,7 @@ class Bonus {
   PImage money;
 
   Bonus () {
-    loc = new PVector(random(50,750), random(50,450));
+    loc = new PVector(random(50, 750), random(50, 450));
     d = 30;
     c = color(0, 0, 255);
     life = 200;
@@ -17,11 +17,11 @@ class Bonus {
     image(money, loc.x, loc.y, d, d);
   }
 
-  void update(){
+
+  void update() {
     /*This is so that after a short period of time, the bonus
-    item goes away*/
-    
-   life--; 
+     item goes away*/
+    life--;
   }
 
   boolean touch(Mallet m) {

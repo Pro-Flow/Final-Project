@@ -35,7 +35,6 @@ void setup () {
   rect = new Rectangle();
   gameOver = false;
   instructions = false;
-
   score1 = 0;
   score2 = 0;
   world = loadImage("earthlights.jpg");
@@ -129,9 +128,11 @@ void draw() {
       Bonus b = bonus.get(i);
       b.display();
       b.update();
-      if(b.life <= 0){bonus.remove(i);}
+      if (b.life <= 0) {
+        bonus.remove(i);
+      }
       else if (b.touch(m1)) {
-        score1+=2;
+        score1+=2l;
         bonus.remove(i);
       }
       else if (b.touch(m2)) {
@@ -167,8 +168,8 @@ void draw() {
   if (score1 >= 15|| score2 >= 15) {
     gameOver = true;
   }
-  
- if (gameOver == true) {
+
+  if (gameOver == true) {
     g.alien();
     g.overButton();
     r.display();
@@ -176,16 +177,15 @@ void draw() {
     p1 = new Puck();
     m1 = new Mallet(width/6, height*0.5, 0);
     m2 = new Mallet(width*5/6, height*0.5, 1);
-  }  
+  }
 }
-
 
 
 void mouseClicked() {
   //These are the buttons on the start screen
   if (mouseX>350 && mouseX<450 && mouseY>200 && mouseY<300) {
     //click to start game
-      run = true;
+    run = true;
   }
   if (mouseX<350 && mouseX>0 && mouseY<200 && mouseY>300) {
     run=false;
@@ -197,15 +197,12 @@ void mouseClicked() {
   if (mouseX<350 && mouseX>450 && mouseY<350 && mouseY>450) {
     instructions = false;
   }
-  
-    }
- 
+}
 
-
-    void keyPressed() {
-      //Press p to end game
-      if (key == 'p') {
-        gameOver = !gameOver;
-      }
-    }
+void keyPressed() {
+  //Press p to end game
+  if (key == 'p') {
+    gameOver = !gameOver;
+  }
+}
 
